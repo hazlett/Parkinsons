@@ -8,6 +8,8 @@ public class SitStandTutor : MonoBehaviour {
 	private float speed = 1.0f;
 	private Transform leftAnkleConstant, rightAnkleConstant;
 
+	private int stateChanges;
+	public bool CanContinue { get { return (stateChanges > 5); } }
 	public int state;
 	public enum TutorStates {
 		Idle,
@@ -33,28 +35,32 @@ public class SitStandTutor : MonoBehaviour {
 			Sit ();
 			break;
 		}
-		
 	}
+	
 
-	void OnGUI()
+	public string GetMessage()
 	{
+		if (CanContinue)
+		{
+			return ("TUTOR:\nPress the button\nto continue!");
+		}
 		switch (state){ 
 		case (int)TutorStates.Stand:
-			GUILayout.Label ("Stand with me!");
+			return ("TUTOR:\nWill you please\nstand with me!");
 			break;
 		case (int)TutorStates.Sit:
-			GUILayout.Label ("Sit with me!");
+			return ("TUTOR:\nWill you please\nsit with me!");
 			break;
 		default:
-			GUILayout.Label ("Sit with me!");
+			return ("TUTOR:\nWill you please\nsit with me!");
 			break;
 		}
-
-
 	}
+
 	public void SetState(int state)
 	{
 		this.state = state;
+		stateChanges++;
 	}
 
 	private void Sit()

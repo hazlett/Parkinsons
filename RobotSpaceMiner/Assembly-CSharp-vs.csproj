@@ -85,6 +85,7 @@
      <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
      <Compile Include="Assets\KinectScripts\KinectManager.cs" />
      <Compile Include="Assets\KinectScripts\KinectServer.cs" />
+     <Compile Include="Assets\TutorGui.cs" />
      <Compile Include="Assets\Tutorial\SitStandTutor.cs" />
      <Compile Include="Assets\Tutorial\TutorialManager.cs" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
@@ -97,13 +98,13 @@
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
      <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/bbric_000/Documents/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/bbric_000/Documents/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="KinectV2">
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
