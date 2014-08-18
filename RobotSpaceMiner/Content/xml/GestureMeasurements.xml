@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- The GestureMeasurements.xml file contains definitions for all the angle and vector measurements
+     used in the game.  Before you can define a criterion, you must define a measurement for it here
+     or use one of the already defined measurements.  -->
+<!-- This line is an example comment. You can add comments before any element tag -->
+<measurements>
+
+  <angle name="shoulder-hand-angle">
+    <!-- Another example comment. -->
+    <vector type="default">
+      <!-- Another example comment. -->
+      <joint skeletal-joint="shoulder"
+      side="primary" order="0"/>
+      <!-- Another example comment. -->
+      <joint skeletal-joint="wrist"
+      side="primary" order="1"/>
+    </vector>
+    <vector type="-body-y-axis"/>
+  </angle>
+
+  <angle name="elbow-hand-angle">
+    <vector type="default">
+      <joint skeletal-joint="elbow"
+       side ="secondary" order ="0"/>
+      <joint skeletal-joint="wrist"
+       side ="secondary" order ="1"/>
+    </vector>
+    <vector type="body-y-axis"/>
+  </angle>
+
+  <angle name="elbow-angle">
+    <vector type="default">
+      <joint skeletal-joint="shoulder"
+      side="primary" order="0"/>
+      <joint skeletal-joint="elbow"
+      side="primary" order="1"/>
+    </vector>
+    <vector type="default">
+      <joint skeletal-joint="wrist"
+      side="primary" order="0"/>
+      <joint skeletal-joint="elbow"
+      side="primary" order="1"/>
+    </vector>
+  </angle>
+
+  <vector name="hip-hand-vector">
+    <joint skeletal-joint="hip" side="primary"
+    order="0"/>
+    <joint skeletal-joint="wrist" side="primary"
+    order="1"/>
+  </vector>
+
+  <vector name="hip-center-hand-vector">
+    <joint skeletal-joint="hip-center" side="primary"
+    order="0"/>
+    <joint skeletal-joint="wrist" side="primary"
+    order="1"/>
+  </vector>
+
+  <vector name="shoulder-hand-vector">
+    <joint skeletal-joint="shoulder"
+    side="primary" order="0"/>
+    <joint skeletal-joint="wrist" side="primary"
+    order="1"/>
+  </vector>
+
+  <vector name="shoulder-center-hand-vector">
+    <joint skeletal-joint="shoulder-center" side="primary"
+    order="0"/>
+    <joint skeletal-joint="wrist" side="primary"
+    order="1"/>
+  </vector>
+
+  <vector name="wrist-position">
+    <joint skeletal-joint="wrist"
+    side="primary"/>
+  </vector>
+
+  <vector name="hand-position">
+    <joint skeletal-joint="hand"
+    side="primary"/>
+  </vector>
+
+  <angle name="shoulder-turn" type="polar">
+    <vector>
+      <joint skeletal-joint="shoulder-left"
+      order="0"/>
+      <joint skeletal-joint="shoulder-right"
+      order="1"/>
+    </vector>
+  </angle>
+
+    <angle name="neck-angle">
+    <vector>
+      <joint skeletal-joint="shoulder-center"
+      order="0"/>
+      <joint skeletal-joint="head" order="1"/>
+    </vector>
+    <vector type="world-y-axis"/>
+  </angle>
+
+  <angle name="torso-angle">
+    <vector>
+    <joint skeletal-joint="hip-center" side="primary"
+    order="0"/>
+    <joint skeletal-joint="shoulder-center"
+      order="1"/>
+   </vector>
+   <vector type="world-y-axis"/>
+ </angle>
+
+  <angle name="hip-angle">
+    <vector>
+      <joint skeletal-joint="knee" side="primary" order="0"/>
+      <joint skeletal-joint="hip-center" side="primary" order="1"/>
+    </vector>
+    <vector type="body-y-axis"/>
+  </angle>
+ 
+ <vector name="elbow-wrist-vector">
+   <joint skeletal-joint="elbow" order="0"/>
+   <joint skeletal-joint="wrist" side="primary" order="1"/>
+ </vector>
+
+  <vector name="hand-hand-tip-vector">
+    <joint skeletal-joint="hand" side="primary" order="0"/>
+    <joint skeletal-joint="hand-tip" side="primary" order="1"/>
+  </vector>
+  
+  <angle name="secondary-elbow-angle">
+    <vector type="default">
+      <joint skeletal-joint="shoulder"
+      side="secondary" order="0"/>
+      <joint skeletal-joint="elbow"
+      side="secondary" order="1"/>
+    </vector>
+    <vector type="default">
+      <joint skeletal-joint="wrist"
+      side="secondary" order="0"/>
+      <joint skeletal-joint="elbow"
+      side="secondary" order="1"/>
+    </vector>
+  </angle>
+
+   <vector name="secondary-hip-center-hand-vector">
+    <joint skeletal-joint="hip-center" side="secondary"
+    order="0"/>
+    <joint skeletal-joint="wrist" side="secondary"
+    order="1"/>
+  </vector>
+  
+   <vector name="secondary-shoulder-hand-vector">
+    <joint skeletal-joint="shoulder"
+    side="secondary" order="0"/>
+    <joint skeletal-joint="wrist" side="secondary"
+    order="1"/>
+  </vector>
+
+  <vector name="spine-hand-vector">
+    <joint skeletal-joint="shoulder-center" side="primary"
+    order="0"/>
+    <joint skeletal-joint="hand" side="primary"
+    order="1"/>
+  </vector>
+
+  <vector name="hand-thumb-vector">
+    <joint skeletal-joint="hand" side="primary"
+           order="0"/>
+    <joint skeletal-joint="thumb" side="primary"
+           order="1"/>
+  </vector>
+
+  <vector name="hand-hand-tip-vector">
+    <joint skeletal-joint="hand" side="primary"
+           order="0"/>
+    <joint skeletal-joint="hand-tip" side="primary"
+           order="1"/>
+  </vector>
+
+  <vector name="shoulder-wrist">
+    <joint skeletal-joint="shoulder-center" side="primary" order="0"/>
+    <joint skeletal-joint="wrist" side="primary" order="1"/>
+  </vector>
+
+  <vector name="shoulder-hand">
+    <joint skeletal-joint="shoulder-center" side="primary" order="0"/>
+    <joint skeletal-joint="hand" side="primary" order="1"/>
+  </vector>
+
+  <vector name="shoulder-thumb">
+    <joint skeletal-joint="shoulder-center" side="primary" order="0"/>
+    <joint skeletal-joint="thumb" side="primary" order="1"/>
+  </vector>
+
+  <vector name="shoulder-hand-tip">
+    <joint skeletal-joint="shoulder-center" side="primary" order="0"/>
+    <joint skeletal-joint="hand-tip" side="primary" order="1"/>
+  </vector>
+
+</measurements>

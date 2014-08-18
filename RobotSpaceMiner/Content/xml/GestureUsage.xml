@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<root>
+
+<!-- row-gesture (4 levels) Goal: learn to sweep arm from forward of body to behind back on paretic side, close to body with straight elbow, and without internal rotation of shoulder. -->
+<!-- row-gesture-alt (0 levels) Goal: map new movement to rowing for temporary gesture practice. -->
+<!-- raise-arm-side (8 levels) Goal: learn to raise paretic arm to side in frontal plane with straight elbow, without internal rotation of shoulder. -->
+<!-- reach-across (8 levels) Goal: learn to reach across body. Start reaching low and close to midline. Progress to further across then higher reaching. -->
+
+  <usage> 
+
+    <section name="demo">
+      <!--<binding gameAction="push">
+        <gesture name="full-squat" level="1"/>
+      </binding>-->
+      <binding gameAction="stand">
+        <gesture name="stand" level="1"/>
+      </binding>
+      <binding gameAction="sit">
+        <gesture name="sit" level="1"/>
+      </binding>
+    </section>
+
+    <section name="tutorial">
+      <!--<binding gameAction="push">
+        <gesture name="full-squat" level="1"/>
+      </binding>-->
+      <binding gameAction="stand">
+        <gesture name="stand" level="1"/>
+      </binding>
+      <binding gameAction="sit">
+        <gesture name="sit" level="1"/>
+      </binding>
+    </section>
+    
+  </usage>
+</root>
