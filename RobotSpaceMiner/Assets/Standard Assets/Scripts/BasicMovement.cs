@@ -16,7 +16,7 @@ public class BasicMovement : MonoBehaviour {
     void Start()
     {
         distanceToGround = this.collider.bounds.extents.y;
-        downhill.force = new Vector3(150, 0, 0);
+        downhill.force = new Vector3(100, 0, 0);
         downhill.enabled = false;
 
         chase = GameObject.Find("Chase Camera").camera;

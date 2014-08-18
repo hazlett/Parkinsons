@@ -20,11 +20,25 @@ public class CubeGridCollider : MonoBehaviour {
         if (collider.tag == "Hand")
         {
             this.transform.renderer.material.color = indicatorHit;
+            Deactivate();
         }
     }
 
     void OnTriggerExit(Collider collider)
     {
-        this.transform.renderer.material.color = transparent;
+        if (collider.tag == "Hand")
+        {
+            this.transform.renderer.material.color = indicatorMissed;
+        }
+    }
+
+    internal void Activate()
+    {
+        this.renderer.material.color = indicatorOn;
+    }
+
+    void Deactivate()
+    {
+        this.renderer.material.color = transparent;
     }
 }
