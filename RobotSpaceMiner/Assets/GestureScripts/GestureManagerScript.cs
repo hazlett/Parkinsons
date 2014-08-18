@@ -10,6 +10,7 @@ public class GestureManagerScript : MonoBehaviour {
 
     public GestureManager gestureManager;
     public BasicMovement move;
+	public SitStandTutor tutor;
     public KinectGameData currentKinectGameData;
     public string sectionName;
 
@@ -18,7 +19,8 @@ public class GestureManagerScript : MonoBehaviour {
 	// Use this for initialization
 
 	void Awake () {
-        
+		stand = new StandTutorial (tutor);
+		sit = new SitTutorial (tutor);
             
         Debug.Log("Initializing Kinect");
         try
@@ -42,7 +44,6 @@ public class GestureManagerScript : MonoBehaviour {
             Debug.LogError(e.Message);
         }
 
-        DontDestroyOnLoad(this.gameObject);
         int size = 5 * 60;
         gestureManager = new GestureManager(size, true);
       
@@ -79,22 +80,45 @@ public class GestureManagerScript : MonoBehaviour {
     {
        IGestureAction rv = null;
                
-       		if (name == "stand")
-       		{
-                rv = new MoveCart(move);
-       		}
-       		if (name == "sit")
-       		{
-       			rv = new MoveCart(move);
-       		}
+		if (name == "stand")
+		{
+		rv = new MoveCart(move);
+		}
+		if (name == "sit")
+		{
+			rv = new MoveCart(move);
+		}
+		if (name == "standTutorial")
+		{
+			rv = new StandTutorial(tutor);
+		}
+		if (name == "sitTutorial")
+		{
+			rv = new SitTutorial(tutor);
+		}
        
         return rv;
     }
-	// Update is called once per frame
+
+	private IGestureAction stand, sit;
+	private void DebugUpdate()
+	{
+		//debugging only
+		if (Input.GetKeyUp(KeyCode.W))
+		{
+			stand.Trigger(null);
+		}
+		if (Input.GetKeyUp(KeyCode.S))
+		{
+			sit.Trigger(null);
+		}
+	}
+
 	void FixedUpdate () {
 
         GameKinectSensor.Update();
         gestureManager.HandleNewSkeleton(currentKinectGameData, (double)Time.fixedTime * 1000);
+		DebugUpdate ();
 	}
 
     void kinectSensor_SkeletonFrameReady(object sender, SkeletonHandlerArgs skeletonHandler)
