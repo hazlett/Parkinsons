@@ -16,7 +16,6 @@ class StandTutorial : IGestureAction
 	public void Trigger (object data)
 	{
 		tutor.SetState ((int)SitStandTutor.TutorStates.Sit);
-		Debug.Log ("StandTrigger");
 	}
 }
 
