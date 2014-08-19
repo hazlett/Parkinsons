@@ -22,7 +22,7 @@ public class MinecartGestureListener : MonoBehaviour, KinectGestures.GestureList
         manager.DetectGesture(userId, KinectGestures.Gestures.StandUp);
         manager.DetectGesture(userId, KinectGestures.Gestures.Squat);
 
-        mainGUI.timerPause = false;
+		StateManager.Instance.StartTimer ();
 
 		if(GestureInfo != null)
 		{
@@ -37,8 +37,7 @@ public class MinecartGestureListener : MonoBehaviour, KinectGestures.GestureList
 		{
 			GestureInfo.guiText.text = ("User not found.  Raise hand to start again.");
 		}
-
-        mainGUI.timerPause = true;
+	
 	}
 
 	public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture, 

@@ -6,10 +6,12 @@ public class GUIScript : MonoBehaviour {
     public DistanceTraveled cart;
     public BasicMovement movement;
 	public GUISkin Skin;
-    public bool timerPause;
 	public GameStats stats;
     public Texture2D logo, screenFlash;
     private GUIStyle logoStyle = new GUIStyle();
+
+	public GUIText guiText;
+	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
 	private float maxTime = 180.0f, timer, minutes, seconds, warningTime = 5.0f;
@@ -19,13 +21,12 @@ public class GUIScript : MonoBehaviour {
 
 	private float timerAlpha = 1.0f, hitAlpha = 0.0f;
 
-    void Start() {
-        timerPause = true;
-    }
-
 	void Update()
 	{
-        
+		if (StateManager.Instance.Downhill) {
+			message = "Push blue squares with your hand as they appear";
+		}
+		guiText.text = message;
         if (StateManager.Instance.Paused)
         {
             Time.timeScale = 0;
@@ -38,7 +39,7 @@ public class GUIScript : MonoBehaviour {
             AudioListener.pause = false;
         }
         color = GUI.color;
-        if (!timerPause) {
+        if (!StateManager.Instance.TimerPause) {
 
             timer += Time.deltaTime;
         }
@@ -54,15 +55,15 @@ public class GUIScript : MonoBehaviour {
         }
         else if (timer >= maxTime - warningTime)
         {
-            minutes = Mathf.Floor((maxTime - timer) / 60.0f);
-            seconds = (maxTime - timer) % 60;
+            minutes = Mathf.FloorToInt((maxTime - timer) / 60.0f);
+            seconds = Mathf.FloorToInt(maxTime - timer) % 60;
 
             timerAlpha = timer % 1.0f;
         }
         else
         {
-            minutes = Mathf.Floor((maxTime - timer) / 60.0f);
-            seconds = (maxTime - timer) % 60;
+            minutes = Mathf.FloorToInt((maxTime - timer) / 60.0f);
+            seconds = Mathf.FloorToInt(maxTime - timer) % 60;
         }
 
         if (!fadingIn)

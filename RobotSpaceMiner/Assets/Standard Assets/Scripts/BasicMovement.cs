@@ -36,6 +36,7 @@ public class BasicMovement : MonoBehaviour {
 
         if(cartDistance.Distance() >= 300) {
             downhill.enabled = true;
+			StateManager.Instance.Downhill = true;
             mainCamera.camera.enabled = false;
             chase.enabled = false;
             car.enabled = true;
@@ -50,6 +51,10 @@ public class BasicMovement : MonoBehaviour {
 
         if (cartDistance.Distance() < 300)
         {
+			if (StateManager.Instance.TimerPause)
+			{
+				StateManager.Instance.StartTimer();
+			}
             if (rigidbody.velocity.x <= maxVelocity && IsGrounded())
             {
                 rigidbody.AddForce(new Vector3(7500, 0, 0));
