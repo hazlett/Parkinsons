@@ -16,15 +16,23 @@ public class CubeGridCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider)
     {
-
-        if (collider.tag == "Hand")
-        {
-            if (this.renderer.material.color == indicatorOn)
-            {
-                Deactivate();
-            }
-        }
+		if (collider.tag == "Hand")
+		{
+			CheckCollision();
+		}
     }
+
+	private void CheckCollision()
+	{
+		if (this.renderer.material.color == indicatorOn)
+		{
+			Deactivate();
+		}
+	}
+	internal void DebugCheckCollision()
+	{
+		CheckCollision ();
+	}
 
     internal void Activate()
     {
