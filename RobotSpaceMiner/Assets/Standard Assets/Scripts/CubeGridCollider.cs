@@ -36,7 +36,7 @@ public class CubeGridCollider : MonoBehaviour {
         this.renderer.material.color = transparent;
 
         GameObject attackFireball;
-        attackFireball = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/FireballPurple"));
+        attackFireball = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Iceball"));
         attackFireball.transform.position = this.transform.position;
     }
 }

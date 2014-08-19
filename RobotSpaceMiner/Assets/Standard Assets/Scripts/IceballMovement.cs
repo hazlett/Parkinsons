@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireballMovement : MonoBehaviour {
+public class IceballMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Start () {
 
-        this.rigidbody.velocity = new Vector3(60, 0, 0); ;
+        this.rigidbody.velocity = new Vector3(60, 0, 0); 
 	}
 
     void OnTriggerEnter(Collider collider)
@@ -18,8 +18,7 @@ public class FireballMovement : MonoBehaviour {
             destroyedFireworks.transform.position = this.transform.position;
 
             GameObject.Destroy(collider.gameObject);
-            GameObject.Destroy(this.gameObject);
-            
+            GameObject.Destroy(this.gameObject);          
         }
     }
 }
