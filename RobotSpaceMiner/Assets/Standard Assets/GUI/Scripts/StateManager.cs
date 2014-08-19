@@ -13,6 +13,10 @@ public class StateManager {
         MENU
     };
 
+	private bool downhill = false;
+	public bool Downhill { get { return downhill; } set { downhill = value; } } 
+	private bool timerPause = true;
+	public bool TimerPause { get { return timerPause; } }
     private static StateManager instance = new StateManager();
     private State currentState;
     public State CurrentState { get { return currentState; } set { currentState = value; } }
@@ -30,7 +34,10 @@ public class StateManager {
             return instance;
         }
     }
-
+	public void StartTimer()
+	{
+		timerPause = false;
+	}
     public void TogglePause()
     {
         paused = !paused;
