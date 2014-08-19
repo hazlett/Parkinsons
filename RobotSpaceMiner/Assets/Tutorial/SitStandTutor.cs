@@ -63,6 +63,11 @@ public class SitStandTutor : MonoBehaviour {
 		stateChanges++;
 	}
 
+	public void Continue()
+	{
+		if (CanContinue)
+			Application.LoadLevel ("MainLevel");
+	}
 	private void Sit()
 	{
 		Quaternion hipRotation = Quaternion.Slerp (hip.transform.localRotation, hipSit.localRotation, Time.deltaTime * speed);

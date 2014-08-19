@@ -8,7 +8,6 @@ public class BasicMovement : MonoBehaviour {
     public Camera mainCamera;
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
-
     private Vector3 moveNormal;
     private float offsetX = -6f, offsetY = 7, distanceToGround;
     private Camera chase, car;

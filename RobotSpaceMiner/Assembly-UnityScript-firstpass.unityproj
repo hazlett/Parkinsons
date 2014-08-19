@@ -59,10 +59,10 @@
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
      <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

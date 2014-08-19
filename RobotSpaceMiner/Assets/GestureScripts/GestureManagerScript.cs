@@ -52,7 +52,7 @@ public class GestureManagerScript : MonoBehaviour {
         //if (gestureManager.ErrorMessage.Length > 0)
         //    Debug.LogError(gestureManager.ErrorMessage);
         SetGesturesForSection(sectionName);
-		Debug.Log("Kinect Complete");
+		Debug.Log("Kinect Status: " + GameKinectSensor.Status);
 		
 	}
 
@@ -96,6 +96,10 @@ public class GestureManagerScript : MonoBehaviour {
 		{
 			rv = new SitTutorial(tutor);
 		}
+		if (name == "continueTutorial")
+		{
+			rv = new ContinueTutorial(tutor);
+		}
        
         return rv;
     }
@@ -115,8 +119,9 @@ public class GestureManagerScript : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-
         GameKinectSensor.Update();
+		if (GameKinectSensor.KinectLost)
+			Debug.LogError("Kinect Lost");
         gestureManager.HandleNewSkeleton(currentKinectGameData, (double)Time.fixedTime * 1000);
 		DebugUpdate ();
 	}
