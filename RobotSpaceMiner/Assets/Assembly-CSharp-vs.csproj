@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{4C9C6A73-8351-C393-110A-495A9EB3496F}</ProjectGuid>
+	<ProjectGuid>{BC770EDB-7473-32D3-A564-D1C41443C14B}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,30 +46,57 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Editor\EndlessMenu.cs" />
-     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Editor\TerrainEditor.cs" />
-     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Extensions.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\MeshPiece.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabManager.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabPool.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabRule.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\RenderQueue.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Settings.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainDisplayer.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainManager.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPiece.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPool.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainRule.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TransformHelpers.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Core\Scripts\VertexGenerator.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\ChaseCamera.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\CoinPickup.cs" />
+     <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\GestureScripts\GestureManagerScript.cs" />
+     <Compile Include="Assets\GestureScripts\MoveCart.cs" />
+     <Compile Include="Assets\GestureScripts\SitTutorial.cs" />
+     <Compile Include="Assets\GestureScripts\StandTutorial.cs" />
+     <Compile Include="Assets\GesturesDemo\Scripts\GestureListener.cs" />
+     <Compile Include="Assets\GesturesDemo\Scripts\PresentationScript.cs" />
+     <Compile Include="Assets\InteractionDemo\Scripts\GrabDropScript.cs" />
+     <Compile Include="Assets\InteractionDemo\Scripts\GuiWindowScript.cs" />
+     <Compile Include="Assets\KinectScripts\AvatarController.cs" />
+     <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
+     <Compile Include="Assets\KinectScripts\Extras\LoadMainLevel.cs" />
+     <Compile Include="Assets\KinectScripts\Extras\MinecartGestureListener.cs" />
+     <Compile Include="Assets\KinectScripts\Extras\MouseControl.cs" />
+     <Compile Include="Assets\KinectScripts\Extras\SetSceneAvatars.cs" />
+     <Compile Include="Assets\KinectScripts\Extras\SimpleGestureListener.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
+     <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+     <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
+     <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
+     <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
+     <Compile Include="Assets\KinectScripts\KinectManager.cs" />
+     <Compile Include="Assets\KinectScripts\KinectServer.cs" />
+     <Compile Include="Assets\TutorGui.cs" />
+     <Compile Include="Assets\Tutorial\SitStandTutor.cs" />
+     <Compile Include="Assets\Tutorial\TutorialManager.cs" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
-     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\CartoonFX3 Readme.txt" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Releases Notes.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\Documentation\Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Materials\GlassTypeA.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Glass.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Invert.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
-     <None Include="Assets\Standard Assets\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Leave.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
      <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
-     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
@@ -79,18 +106,10 @@
  <Reference Include="KinectV2">
  <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
- <Reference Include="JMOAssets">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
       <Project>{97869B72-48D4-C3F2-0334-3F29637A7144}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{BC770EDB-7473-32D3-A564-D1C41443C14B}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

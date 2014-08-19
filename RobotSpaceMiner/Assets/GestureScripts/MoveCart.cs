@@ -17,7 +17,6 @@ public class MoveCart : IGestureAction {
 
 	public void Trigger (object data)
 	{
-		Debug.Log ("SitTrigger");
         cart.Pumped();
 	}
 }

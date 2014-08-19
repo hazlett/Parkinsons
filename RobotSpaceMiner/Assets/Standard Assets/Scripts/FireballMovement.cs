@@ -4,7 +4,7 @@ using System.Collections;
 public class FireballMovement : MonoBehaviour {
 	
 	// Update is called once per frame
-	void Update () {
+	void Start () {
 
         this.rigidbody.velocity = new Vector3(60, 0, 0); ;
 	}

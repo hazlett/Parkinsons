@@ -2,101 +2,57 @@
 
 <gestures  defaultLevelUpThreshold="0.6" defaultLevelDownThreshold="0.1" defaultMovementCountSize="20">
  
+ 
   <gesture name="full-squat">
     <state name="initial" order="0">
       <criterion ref="hip-angle" plane="yz"
-      compare="lt" value="10.0"/>
-      
+      compare="lt" value="10.0"/>      
     </state>
     <state name="middle" order="1">
       <criterion ref="hip-angle" plane="yz"
-      compare="gt" value="80.0"/>
-      
+      compare="gt" value="80.0"/>      
     </state>
     <state name="final" order="2">
       <criterion ref="hip-angle" plane="yz"
-      compare="lt" value="10.0"/>
-     
+      compare="lt" value="10.0"/>     
     </state>
   </gesture>
+  
   
   <gesture name="stand">
     <state name="initial" order="0">
       <criterion ref="hip-angle" plane="yz"
       compare="gt" value="80.0"/>
-
     </state>
     <state name="final" order="1">
       <criterion ref="hip-angle" plane="yz"
       compare="lt" value="10.0"/>
-
     </state>
   </gesture>
 
+  
   <gesture name="sit">
     <state name="initial" order="0">
       <criterion ref="hip-angle" plane="yz"
       compare="lt" value="10.0"/>
-
     </state>
-
     <state name="final" order="2">
       <criterion ref="hip-angle" plane="yz"
       compare="gt" value="80.0"/>
-
     </state>
   </gesture>
 
-
-  <gesture name="row-gesture-level-1">
-    <!-- row-gesture Goal: learn to sweep arm from forward of body to behind back on paretic side, close to body with straight elbow, and without internal rotation of shoulder. -->
+  
+  <gesture name="raise-hand">
     <state name="initial" order="0">
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="gt" value="15.0"/>
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="lt" value="40.0"/>
-      <criterion ref="shoulder-hand-angle" plane="xy"
-      compare="lt" value="40.0"/>
+      <criterion ref="shoulder-hand-vector"
+      component="y" compare="lt" value="0.0"/>
       <criterion ref="hip-center-hand-vector"
-      component="x" compare="gt" value="0.025"/>
-      <criterion ref="elbow-angle"
-      compare="lt" value="180.0"/>
-      <criterion ref="elbow-angle"
-      compare="gt" value="0.0"/>
-      <criterion ref="torso-angle" plane="xy"
-      compare="lt" value="50.0"/>
+      component="x" compare="gt" value="0.0"/>
     </state>
-    <state name="middle" order="1">
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="gt" value="10.0"/>
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="lt" value="20.0"/>
-      <criterion ref="shoulder-hand-angle" plane="xy"
-      compare="lt" value="40.0"/>
-      <criterion ref="hip-center-hand-vector"
-      component="x" compare="gt" value="0.025"/>
-      <criterion ref="elbow-angle"
-      compare="lt" value="180.0"/>
-      <criterion ref="elbow-angle"
-      compare="gt" value="0.0"/>
-      <criterion ref="torso-angle" plane="xy"
-      compare="lt" value="50.0"/>
-    </state>
-    <state name="final" order="2">
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="gt" value="0.0"/>
-      <criterion ref="shoulder-hand-angle" plane="yz"
-      compare="lt" value="10.0"/>
-      <criterion ref="shoulder-hand-angle" plane="xy"
-      compare="lt" value="40.0"/>
-      <criterion ref="hip-center-hand-vector"
-      component="x" compare="gt" value="0.02"/>
-      <criterion ref="elbow-angle"
-      compare="lt" value="180.0"/>
-      <criterion ref="elbow-angle"
-      compare="gt" value="0.0"/>
-      <criterion ref="torso-angle" plane="xy"
-      compare="lt" value="50.0"/>
+    <state name="final" order="1">
+      <criterion ref="shoulder-hand-vector"
+      component="y" compare="gt" value="0.0"/>
     </state>
   </gesture>
 

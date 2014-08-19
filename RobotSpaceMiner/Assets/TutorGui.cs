@@ -21,9 +21,9 @@ public class TutorGui : MonoBehaviour {
 		if (tutor.CanContinue)
 		{
 			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10f), nativeVerticalResolution * 0.5f, scaledResolutionWidth / 4,
-			                     nativeVerticalResolution / 5), "PRESS TO CONTINUE")) 
+			                  nativeVerticalResolution / 5), "RAISE RIGHT HAND\nTO CONTINUE"))
 			{
-				Application.LoadLevel("MainLevel");
+				tutor.Continue();
 			}
 		}
 

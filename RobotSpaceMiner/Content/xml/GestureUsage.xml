@@ -30,6 +30,9 @@
       <binding gameAction="sitTutorial">
         <gesture name="sit" level="1"/>
       </binding>
+	  <binding gameAction="continueTutorial">
+	  <gesture name="raise-hand" level="1"/>
+	  </binding>
     </section>
     
   </usage>

@@ -2,33 +2,21 @@
 using System.Collections;
 
 public class GameStats : MonoBehaviour {
+	
+	private int score;
 
-	private int upDowns;
-	private int upDownsFailed;
-
-    public Move mover;
-
-    public float DistanceTraveled {
-        get { return mover.DistanceTraveled; }
-    }
-	public int UpDownsCompleted {
-		get { return upDowns; }
-	}
-	public int UpDownsFailed {
-		get { return upDownsFailed; }
+	public int Score {
+		get { return score;}
 	}
 
-	public void UpDown(bool completed)
+	public void AddScore(int value)
 	{
-		if (completed)
-			upDowns++;
-		else
-			upDownsFailed++;
+		this.score += value;
 	}
-
+	
 	public void LogStats()
 	{
-        DataLogger.Instance.Log("Distance traveled: " + DistanceTraveled);
+        DataLogger.Instance.Log("Total Score: " + Score);
 	}
 
 }
