@@ -75,12 +75,22 @@
      <Compile Include="Assets\Standard Assets\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ChaseCam.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CubeGridCollider.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomCenter.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomLeft.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomRight.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopCenter.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopLeft.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopRight.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DistanceTraveled.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\FireballBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\KeyboardController.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleCenter.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleLeft.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleRight.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\CarCamera.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Fog.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Kart.cs" />
@@ -120,10 +130,10 @@
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
