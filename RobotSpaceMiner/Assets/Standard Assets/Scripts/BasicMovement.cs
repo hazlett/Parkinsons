@@ -34,12 +34,20 @@ public class BasicMovement : MonoBehaviour {
 
         }
 
-        if(cartDistance.Distance() >= 300) {
+        if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
+        {
             downhill.enabled = true;
-			StateManager.Instance.Downhill = true;
+            StateManager.Instance.Downhill = true;
             mainCamera.camera.enabled = false;
             chase.enabled = false;
             car.enabled = true;
+        }
+        else
+        {
+            downhill.enabled = false;
+            StateManager.Instance.Downhill = false;
+            mainCamera.camera.enabled = true;
+            car.enabled = false;
         }
 
         CameraFollow();
@@ -48,7 +56,7 @@ public class BasicMovement : MonoBehaviour {
 
     public void Pumped() {
 
-        if (cartDistance.Distance() < 300)
+        if (cartDistance.Distance() <= 400 || this.transform.rotation.z > 0.001f)
         {
 			if (StateManager.Instance.TimerPause)
 			{

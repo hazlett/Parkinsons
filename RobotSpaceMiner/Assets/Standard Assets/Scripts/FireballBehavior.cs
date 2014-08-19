@@ -24,6 +24,11 @@ public class FireballBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f)
+        {
+            DeactivateCube();
+            GameObject.Destroy(this.gameObject);
+        }
         if (this.transform.position.x - cart.transform.position.x < explosionDistance)
         {
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
