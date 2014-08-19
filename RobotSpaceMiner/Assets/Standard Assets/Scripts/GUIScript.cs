@@ -26,6 +26,10 @@ public class GUIScript : MonoBehaviour {
 		if (StateManager.Instance.Downhill) {
 			message = "Push blue squares with your hand as they appear";
 		}
+		else
+		{
+			message = "Stand and sit to move the cart up the hill";
+		}
 		guiText.text = message;
         if (StateManager.Instance.Paused)
         {
