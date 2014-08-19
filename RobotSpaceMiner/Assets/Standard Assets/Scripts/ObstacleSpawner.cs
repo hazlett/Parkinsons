@@ -53,7 +53,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void CheckCart(){
 
-        if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnDistance)) {
+        if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnDistance) && (cart.transform.rotation.z < 0.01f)) {
 
             previousSpawn = (int)cart.transform.position.x;
             Spawn();
