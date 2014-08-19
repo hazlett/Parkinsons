@@ -19,6 +19,15 @@ public class KeyboardController : MonoBehaviour {
 		keyMapping.Add (KeyCode.Keypad7, new TouchTopLeft (topLeft));
 		keyMapping.Add (KeyCode.Keypad8, new TouchTopLeft (topCenter));
 		keyMapping.Add (KeyCode.Keypad9, new TouchTopLeft (topRight));
+		keyMapping.Add (KeyCode.M, new TouchBottomLeft (bottomLeft));
+		keyMapping.Add (KeyCode.Comma, new TouchBottomCenter (bottomCenter));
+		keyMapping.Add (KeyCode.Period, new TouchBottomRight (bottomRight));
+		keyMapping.Add (KeyCode.J, new TouchMiddleLeft (middleLeft));
+		keyMapping.Add (KeyCode.K, new TouchMiddleCenter (middleCenter));
+		keyMapping.Add (KeyCode.L, new TouchMiddleRight (middleRight));
+		keyMapping.Add (KeyCode.U, new TouchTopLeft (topLeft));
+		keyMapping.Add (KeyCode.I, new TouchTopLeft (topCenter));
+		keyMapping.Add (KeyCode.O, new TouchTopLeft (topRight));
 
 	}
 
