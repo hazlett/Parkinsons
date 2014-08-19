@@ -46,12 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\Collidable.cs" />
      <Compile Include="Assets\Standard Assets\GUI\Scripts\DataLogger.cs" />
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\GameManager.cs" />
      <Compile Include="Assets\Standard Assets\GUI\Scripts\GameStats.cs" />
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\MakeMove.cs" />
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\Move.cs" />
      <Compile Include="Assets\Standard Assets\GUI\Scripts\StateManager.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />

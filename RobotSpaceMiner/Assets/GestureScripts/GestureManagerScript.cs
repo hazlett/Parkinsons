@@ -80,7 +80,6 @@ public class GestureManagerScript : MonoBehaviour {
     {
        IGestureAction rv = null;
 
-       Debug.Log("Detect Mode");
        if (sectionName == "demo")
        {
            if (name == "stand")
@@ -94,7 +93,6 @@ public class GestureManagerScript : MonoBehaviour {
        }
        if (sectionName == "tutorial")
        {
-           Debug.Log("Tutorial Mode");
            if (name == "standTutorial")
            {
                rv = new StandTutorial(tutor);

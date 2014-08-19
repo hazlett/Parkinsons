@@ -35,7 +35,7 @@ public class FireballBehavior : MonoBehaviour {
             explosion.transform.position = this.transform.position;
 
             cart.rigidbody.AddForce(new Vector3(-25000, 0, 0));
-
+			cart.GetComponent<GameStats>().AddScore(-25);
             DeactivateCube();
 
             GameObject.Destroy(this.gameObject);
