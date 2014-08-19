@@ -38,6 +38,10 @@ public class StateManager {
 	{
 		timerPause = false;
 	}
+	public void ResetTimer()
+	{
+		timerPause = true;
+	}
     public void TogglePause()
     {
         paused = !paused;

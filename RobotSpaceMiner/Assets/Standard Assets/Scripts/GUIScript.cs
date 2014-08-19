@@ -14,15 +14,24 @@ public class GUIScript : MonoBehaviour {
 	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
-	private float maxTime = 180.0f, timer, minutes, seconds, warningTime = 5.0f;
+	private float maxTime = 60.0f, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
     private bool fadingIn = true;
 
 	private float timerAlpha = 1.0f, hitAlpha = 0.0f;
 
+	void Start()
+	{
+		timer = 0.0f;
+		StateManager.Instance.ResetTimer ();
+		StateManager.Instance.CurrentState = StateManager.State.PLAYING;
+	}
+
 	void Update()
 	{
+		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
+			return;
 		if (StateManager.Instance.Downhill) {
 			message = "Push blue squares with your hand as they appear";
 		}
@@ -54,8 +63,7 @@ public class GUIScript : MonoBehaviour {
             seconds = 0.0f;
 
             timerAlpha = timer % 0.5f + 0.2f;
-
-            StateManager.Instance.CurrentState = StateManager.State.EPILOGUE;
+            StateManager.Instance.CurrentState = StateManager.State.GAMEOVER;
         }
         else if (timer >= maxTime - warningTime)
         {
@@ -80,10 +88,29 @@ public class GUIScript : MonoBehaviour {
 
 	void OnGUI() 
 	{  
+
 		GUI.skin = Skin;
 
         // Scale the GUI to any resolution based on 1920 x 1080 base resolution
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
+
+		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
+		{
+			GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.3f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+			        "GAME\nOVER");
+			
+			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.5f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+			                "PRESS TO\nPLAY AGAIN"))
+			{
+				Application.LoadLevel("MainLevel");
+			}
+			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.7f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+			               "PRESS TO\nEXIT"))
+			{
+				Application.Quit();
+			}
+			return;
+		}
 
         if (StateManager.Instance.Paused)
         {

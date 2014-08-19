@@ -1,18 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\KeyboardController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GUIScript.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomCenter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchTopLeft.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomLeft.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchTopRight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchTopCenter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\KeyboardController.cs" Line="18" Column="63" />
-      <File FileName="Assets\Standard Assets\Scripts\CubeGridCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomRight.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\TouchMiddleLeft.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\TouchMiddleCenter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\TouchMiddleRight.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\GUIScript.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
