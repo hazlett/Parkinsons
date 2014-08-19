@@ -39,4 +39,9 @@ public class CubeGridCollider : MonoBehaviour {
         attackFireball = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Iceball"));
         attackFireball.transform.position = this.transform.position;
     }
+
+    internal void DeactivateHit()
+    {
+        this.renderer.material.color = transparent;
+    }
 }

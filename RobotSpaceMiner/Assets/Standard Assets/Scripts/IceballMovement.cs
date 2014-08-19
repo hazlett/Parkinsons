@@ -21,4 +21,8 @@ public class IceballMovement : MonoBehaviour {
             GameObject.Destroy(this.gameObject);          
         }
     }
+
+    void FixedUpdate()
+    {
+    }
 }

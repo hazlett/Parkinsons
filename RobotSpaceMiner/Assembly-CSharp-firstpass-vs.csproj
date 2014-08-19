@@ -76,6 +76,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\ChaseCam.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CubeGridCollider.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DistanceTraveled.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\FireballBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
