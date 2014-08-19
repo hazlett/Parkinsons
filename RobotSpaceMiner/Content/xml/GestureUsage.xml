@@ -24,10 +24,10 @@
       <!--<binding gameAction="push">
         <gesture name="full-squat" level="1"/>
       </binding>-->
-      <binding gameAction="stand">
+      <binding gameAction="standTutorial">
         <gesture name="stand" level="1"/>
       </binding>
-      <binding gameAction="sit">
+      <binding gameAction="sitTutorial">
         <gesture name="sit" level="1"/>
       </binding>
     </section>

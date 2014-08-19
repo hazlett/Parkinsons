@@ -65,8 +65,6 @@
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\GestureScripts\GestureManagerScript.cs" />
      <Compile Include="Assets\GestureScripts\MoveCart.cs" />
-     <Compile Include="Assets\GestureScripts\SitTutorial.cs" />
-     <Compile Include="Assets\GestureScripts\StandTutorial.cs" />
      <Compile Include="Assets\GesturesDemo\Scripts\GestureListener.cs" />
      <Compile Include="Assets\GesturesDemo\Scripts\PresentationScript.cs" />
      <Compile Include="Assets\InteractionDemo\Scripts\GrabDropScript.cs" />
@@ -87,16 +85,31 @@
      <Compile Include="Assets\KinectScripts\KinectServer.cs" />
      <Compile Include="Assets\TutorGui.cs" />
      <Compile Include="Assets\Tutorial\SitStandTutor.cs" />
+     <Compile Include="Assets\Tutorial\SitTutorial.cs" />
+     <Compile Include="Assets\Tutorial\StandTutorial.cs" />
      <Compile Include="Assets\Tutorial\TutorialManager.cs" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\CartoonFX3 Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Releases Notes.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\Documentation\Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Materials\GlassTypeA.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Glass.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Invert.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Leave.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
      <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

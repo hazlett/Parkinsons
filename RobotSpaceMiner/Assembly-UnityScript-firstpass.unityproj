@@ -49,15 +49,28 @@
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\NightWitch.js" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\SimpleTurn.js" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Scripts\AnimatedTextureUV.js" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\CartoonFX3 Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Releases Notes.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\Documentation\Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Materials\GlassTypeA.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Glass.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Invert.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Leave.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
      <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
+     <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="GestureLibrary">
  <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
  </Reference>

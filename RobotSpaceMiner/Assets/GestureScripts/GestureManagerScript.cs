@@ -79,23 +79,31 @@ public class GestureManagerScript : MonoBehaviour {
     private IGestureAction CreateGestureAction(string name)
     {
        IGestureAction rv = null;
-               
-		if (name == "stand")
-		{
-		rv = new MoveCart(move);
-		}
-		if (name == "sit")
-		{
-			rv = new MoveCart(move);
-		}
-		if (name == "standTutorial")
-		{
-			rv = new StandTutorial(tutor);
-		}
-		if (name == "sitTutorial")
-		{
-			rv = new SitTutorial(tutor);
-		}
+
+       Debug.Log("Detect Mode");
+       if (sectionName == "demo")
+       {
+           if (name == "stand")
+           {
+               rv = new MoveCart(move);
+           }
+           if (name == "sit")
+           {
+               rv = new MoveCart(move);
+           }
+       }
+       if (sectionName == "tutorial")
+       {
+           Debug.Log("Tutorial Mode");
+           if (name == "standTutorial")
+           {
+               rv = new StandTutorial(tutor);
+           }
+           if (name == "sitTutorial")
+           {
+               rv = new SitTutorial(tutor);
+           }
+       }
        
         return rv;
     }

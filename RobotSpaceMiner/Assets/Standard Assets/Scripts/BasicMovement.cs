@@ -42,7 +42,6 @@ public class BasicMovement : MonoBehaviour {
             car.enabled = true;
         }
 
-        CheckVelocity();
         CameraFollow();
 
     }
@@ -56,6 +55,9 @@ public class BasicMovement : MonoBehaviour {
                 rigidbody.AddForce(new Vector3(7500, 0, 0));
             }
         }
+
+
+        CheckVelocity();
         
 
     }
