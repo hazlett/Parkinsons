@@ -20,9 +20,9 @@ public class CameraSwitch : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C))
         {
             cameraActive++;
+            SwitchCameras();
         }
 
-        SwitchCameras();
 	}
 
     public void SwitchCameras()

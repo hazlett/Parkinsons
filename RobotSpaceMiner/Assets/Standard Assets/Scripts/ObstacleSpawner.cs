@@ -45,7 +45,6 @@ public class ObstacleSpawner : MonoBehaviour {
         previousSpawn = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
         CheckCart();
@@ -53,16 +52,21 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void CheckCart(){
 
+        // Check if the cart is in the right position to spawn a new hazard
         if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnDistance) && (cart.transform.rotation.z < 0.01f)) {
 
             previousSpawn = (int)cart.transform.position.x;
-            Spawn();
+            if (StateManager.Instance.CurrentState == StateManager.State.PLAYING)
+            {
+                Spawn();
+            }
         }
     }
 
     void Spawn()
     {
 
+        // Instantiate obstacle (Fireball)
         GameObject hazardousElement;
         FireballBehavior hazardBehavior;
 
@@ -71,6 +75,7 @@ public class ObstacleSpawner : MonoBehaviour {
         hazardousElement =  (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/RedFireball"));
         hazardBehavior = hazardousElement.GetComponent<FireballBehavior>();
 
+        // Based on which grid cube is active, place the obstacle in the cube's path
         switch (activeCube)
         {
             case cubeGrid.TOPLEFT: hazardousElement.transform.position = new Vector3(topLeftCube.transform.position.x + spawnDistance, topLeftCube.transform.position.y, topLeftCube.transform.position.z);
@@ -100,7 +105,6 @@ public class ObstacleSpawner : MonoBehaviour {
             default: activeCube = 0;
                 break;
         }
-
 
     }
 
