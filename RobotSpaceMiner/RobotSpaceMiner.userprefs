@@ -1,15 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\XmlSettings.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\SettingsMenu.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\DistanceTraveled.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\KeyboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\FireballBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\IceballMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\BasicMovement.cs" Line="44" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\XmlSettings.cs" Line="6" Column="27" />
-      <File FileName="Assets\Standard Assets\Scripts\SettingsMenu.cs" Line="80" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\SettingsSerializer.cs" Line="22" Column="6" />
+      <File FileName="Assets\Standard Assets\Scripts\XmlSettings.cs" Line="26" Column="20" />
+      <File FileName="Assets\Standard Assets\Scripts\SettingsMenu.cs" Line="45" Column="32" />
+      <File FileName="Assets\Standard Assets\Scripts\MainMenuManager.cs" Line="8" Column="92" />
+      <File FileName="Assets\Standard Assets\Scripts\GUIScript.cs" Line="98" Column="208" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
