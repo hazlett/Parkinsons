@@ -41,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour {
         middleCenter = middleCenterCube.GetComponent<CubeGridCollider>();
         middleRight = middleRightCube.GetComponent<CubeGridCollider>();
 
-        startSpawn = 400;
+        StartSpawnDistance();
         previousSpawn = 0;
 	}
 	
@@ -106,6 +106,27 @@ public class ObstacleSpawner : MonoBehaviour {
                 break;
         }
 
+    }
+
+    void StartSpawnDistance()
+    {
+        switch (PlayerSettings.Instance.Age)
+        {
+            case 65: spawnDistance = 1000;
+                break;
+            case 70: spawnDistance = 1100;
+                break;
+            case 75: spawnDistance = 1200;
+                break;
+            case 80: spawnDistance = 1300;
+                break;
+            case 85: spawnDistance = 1400;
+                break;
+            case 90: spawnDistance = 1500;
+                break;
+            default: spawnDistance = 750;
+                break;
+        }
     }
 
 }
