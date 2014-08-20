@@ -8,13 +8,14 @@ public class BasicMovement : MonoBehaviour {
     public Camera mainCamera;
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
+
     private Vector3 moveNormal;
-    private float offsetX = -6f, offsetY = 7, distanceToGround;
+    private float offsetX = -6f, offsetY = 7, forceOnCart;
     private Camera chase, car;
 
     void Start()
     {
-        distanceToGround = this.collider.bounds.extents.y;
+        SetForceOnCart();
         downhill.force = new Vector3(100, 0, 0);
         downhill.enabled = false;
 
@@ -24,29 +25,13 @@ public class BasicMovement : MonoBehaviour {
 
     void Update()
     {
-        Gravity();
-
-        if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
-        {
-            downhill.enabled = true;
-            StateManager.Instance.Downhill = true;
-            mainCamera.camera.enabled = false;
-            chase.enabled = false;
-            car.enabled = true;
-        }
-        else
-        {
-            downhill.enabled = false;
-            StateManager.Instance.Downhill = false;
-            mainCamera.camera.enabled = true;
-            car.enabled = false;
-        }
+        DownhillCheck();
 
         CameraFollow();
 
     }
 
-    public void Pumped() {
+    public void Move() {
 
         if (cartDistance.Distance() <= 400 || this.transform.rotation.z > 0.001f)
         {
@@ -54,9 +39,9 @@ public class BasicMovement : MonoBehaviour {
 			{
 				StateManager.Instance.StartTimer();
 			}
-            if (rigidbody.velocity.x <= maxVelocity && IsGrounded())
+            if (rigidbody.velocity.x <= maxVelocity)
             {
-                rigidbody.AddForce(new Vector3(7500, 0, 0));
+                rigidbody.AddForce(new Vector3(forceOnCart, 0, 0));
             }
         }
 
@@ -75,26 +60,37 @@ public class BasicMovement : MonoBehaviour {
         }
     }
 
-    void Gravity() {
-        
-        moveNormal = -this.transform.up;
-
-        /* Gravity always in carts -y direction */
-        //Physics.gravity = moveNormal * 100;
-        //Physics.gravity = new Vector3(0, -27, 0);
-    }
-
     void CameraFollow() {
 
         mainCamera.transform.position = new Vector3(this.transform.position.x + offsetX, this.transform.position.y + offsetY, -20);
     }
 
-    internal bool IsGrounded() {
-        return !Physics.Raycast(transform.position, -Vector3.up, distanceToGround - 0.5f);
-    }
-
     internal float Velocity()
     {
         return rigidbody.velocity.x;
+    }
+
+    void SetForceOnCart()
+    {
+        forceOnCart = 7500;
+    }
+
+    void DownhillCheck()
+    {
+        if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
+        {
+            downhill.enabled = true;
+            StateManager.Instance.Downhill = true;
+            mainCamera.camera.enabled = false;
+            chase.enabled = false;
+            car.enabled = true;
+        }
+        else
+        {
+            downhill.enabled = false;
+            StateManager.Instance.Downhill = false;
+            mainCamera.camera.enabled = true;
+            car.enabled = false;
+        }
     }
 }

@@ -155,25 +155,5 @@ public class GUIScript : MonoBehaviour {
             scaledResolutionWidth = nativeVerticalResolution / Screen.height * Screen.width;
         }
     }
-
-    internal void DamageFlash()
-    {
-        if (fadingIn)
-        {
-            hitAlpha = Mathf.Lerp(hitAlpha, 1, 1f);
-            if (hitAlpha == 1)
-            {
-                fadingIn = false;
-            }
-        }
-        else
-        {
-            hitAlpha = Mathf.Lerp(hitAlpha, 0, 0.1f);
-            if (hitAlpha < 0.01f)
-            {
-                fadingIn = true;
-            }
-        }
-    }
 }
 
