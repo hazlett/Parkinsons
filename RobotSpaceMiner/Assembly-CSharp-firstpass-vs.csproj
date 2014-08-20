@@ -86,12 +86,16 @@
      <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\KeyboardController.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\MainMenuManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\SettingsMenu.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\SettingsSerializer.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitStandTutor.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\XmlSettings.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\CarCamera.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Fog.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Kart.cs" />
