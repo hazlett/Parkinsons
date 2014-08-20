@@ -18,7 +18,7 @@ public class FireballBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f)
+        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f || StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
         {
             DeactivateCube();
             GameObject.Destroy(this.gameObject);
