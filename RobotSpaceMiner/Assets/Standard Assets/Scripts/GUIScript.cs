@@ -17,8 +17,6 @@ public class GUIScript : MonoBehaviour {
 	private float maxTime = 30.0f, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
-    private bool fadingIn = true;
-
 	private float timerAlpha = 1.0f, hitAlpha = 0.0f;
 
 	void Start()
@@ -79,11 +77,6 @@ public class GUIScript : MonoBehaviour {
         {
             minutes = Mathf.FloorToInt((maxTime - timer) / 60.0f);
             seconds = Mathf.FloorToInt(maxTime - timer) % 60;
-        }
-
-        if (!fadingIn)
-        {
-            DamageFlash();
         }
             
         TimedScreenResize();
