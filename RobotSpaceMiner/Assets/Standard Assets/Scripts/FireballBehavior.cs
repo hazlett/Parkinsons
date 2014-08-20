@@ -27,13 +27,13 @@ public class FireballBehavior : MonoBehaviour {
         // If the cart is close to the hazard, and hasn't shot it, detonate explosion
         if (this.transform.position.x - cart.transform.position.x < explosionDistance)
         {
+            DeactivateCube();
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
             explosion.transform.position = this.transform.position;
 
             // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-25000, 0, 0));
 			cart.GetComponent<GameStats>().AddScore(-100);
-            DeactivateCube();
 
             GameObject.Destroy(this.gameObject);
         }

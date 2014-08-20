@@ -108,7 +108,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void StartSpawnRate()
     {
-        spawnDistance = 150;
+        spawnDistance = 250;
 
         switch (PlayerSettings.Instance.Age)
         {
