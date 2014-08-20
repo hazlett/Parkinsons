@@ -12,12 +12,13 @@ public class FireballBehavior : MonoBehaviour {
 	void Start () {
 
         cart = GameObject.Find("Cart");
+        setCube();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f || StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
+        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f)
         {
             DeactivateCube();
             GameObject.Destroy(this.gameObject);
@@ -38,11 +39,6 @@ public class FireballBehavior : MonoBehaviour {
         }
 	}
 
-    void DeactivateCube()
-    {
-        cubeGrid.DeactivateHit();
-    }
-
     void setCube()
     {
         switch (cubeNumber)
@@ -60,6 +56,11 @@ public class FireballBehavior : MonoBehaviour {
             case 5: cubeGrid = GameObject.Find("MiddleRight").GetComponent<CubeGridCollider>();
                 break;
         }
+    }
+
+    void DeactivateCube()
+    {
+        cubeGrid.DeactivateHit();
     }
 
 }
