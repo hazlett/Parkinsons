@@ -114,7 +114,7 @@ public class ObstacleSpawner : MonoBehaviour {
         {
             case 65: spawnRate = 1000;
                 break;
-            case 70: spawnRate = 1100;
+            case 70: spawnRate = 50;
                 break;
             case 75: spawnRate = 1200;
                 break;
