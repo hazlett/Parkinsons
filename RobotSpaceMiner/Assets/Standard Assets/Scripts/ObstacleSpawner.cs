@@ -3,9 +3,7 @@ using System.Collections;
 
 public class ObstacleSpawner : MonoBehaviour {
 
-    public float spawnDistance;
-
-    private float startSpawn, previousSpawn;
+    private float startSpawn, previousSpawn, spawnDistance, spawnRate;
     private BasicMovement cart;
     private GameObject topLeftCube, topCenterCube, topRightCube, middleLeftCube, middleCenterCube, middleRightCube;
     private CubeGridCollider topLeft, topCenter, topRight, middleLeft, middleCenter, middleRight;
@@ -41,7 +39,7 @@ public class ObstacleSpawner : MonoBehaviour {
         middleCenter = middleCenterCube.GetComponent<CubeGridCollider>();
         middleRight = middleRightCube.GetComponent<CubeGridCollider>();
 
-        StartSpawnDistance();
+        StartSpawnRate();
         previousSpawn = 0;
 	}
 	
@@ -53,7 +51,7 @@ public class ObstacleSpawner : MonoBehaviour {
     void CheckCart(){
 
         // Check if the cart is in the right position to spawn a new hazard
-        if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnDistance) && (cart.transform.rotation.z < 0.01f)) {
+        if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnRate) && (cart.transform.rotation.z < 0.01f)) {
 
             previousSpawn = (int)cart.transform.position.x;
             if (StateManager.Instance.CurrentState == StateManager.State.PLAYING)
@@ -108,23 +106,25 @@ public class ObstacleSpawner : MonoBehaviour {
 
     }
 
-    void StartSpawnDistance()
+    void StartSpawnRate()
     {
+        spawnDistance = 150;
+
         switch (PlayerSettings.Instance.Age)
         {
-            case 65: spawnDistance = 1000;
+            case 65: spawnRate = 1000;
                 break;
-            case 70: spawnDistance = 1100;
+            case 70: spawnRate = 1100;
                 break;
-            case 75: spawnDistance = 1200;
+            case 75: spawnRate = 1200;
                 break;
-            case 80: spawnDistance = 1300;
+            case 80: spawnRate = 1300;
                 break;
-            case 85: spawnDistance = 1400;
+            case 85: spawnRate = 1400;
                 break;
-            case 90: spawnDistance = 1500;
+            case 90: spawnRate = 1500;
                 break;
-            default: spawnDistance = 750;
+            default: spawnRate = 750;
                 break;
         }
     }

@@ -14,7 +14,7 @@ public class GUIScript : MonoBehaviour {
 	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
-	private float maxTime = 30.0f, timer, minutes, seconds, warningTime = 5.0f;
+	private float maxTime = 300.0f, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
 	private float timerAlpha = 1.0f, hitAlpha = 0.0f;
