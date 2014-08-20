@@ -89,6 +89,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\MainMenuManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsMenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsSerializer.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitStandTutor.cs" />

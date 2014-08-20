@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 
 [XmlRoot("Settings")]
 public class XmlSettings {
+
     [XmlAttribute]
     public int Age;
 
@@ -17,6 +18,7 @@ public class XmlSettings {
         Male,
         Female
     };
+	
     public XmlSettings(int age, int timer, int gender)
     {
         Age = age;

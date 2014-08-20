@@ -15,8 +15,11 @@ public class SettingsMenu : MonoBehaviour {
     private XmlSettings settings;
 
 	void Start () {
+		settings = SettingsSerializer.Instance.ReadSettings ();
         ageCleared = false;
         timerCleared = false;
+		age = PlayerSettings.Instance.Age.ToString();
+		timer = PlayerSettings.Instance.Timer.ToString();
 	}
 	
     void OnGUI()
@@ -71,8 +74,10 @@ public class SettingsMenu : MonoBehaviour {
         try
         {
             settings = new XmlSettings(int.Parse(age), int.Parse(timer), gender);
-            SettingsSerializer.Instance.WriteSettings(settings);
+			PlayerSettings.Instance.SetSettings(settings);
         }
-        catch (Exception) { }
+        catch (Exception e) {
+			Debug.LogError(e.Message);
+		}
     }
 }
