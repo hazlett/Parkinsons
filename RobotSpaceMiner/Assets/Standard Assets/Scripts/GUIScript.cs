@@ -14,7 +14,7 @@ public class GUIScript : MonoBehaviour {
 	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
-	private float maxTime = 60.0f, timer, minutes, seconds, warningTime = 5.0f;
+	private float maxTime = 30.0f, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
     private bool fadingIn = true;
@@ -63,6 +63,9 @@ public class GUIScript : MonoBehaviour {
             seconds = 0.0f;
 
             timerAlpha = timer % 0.5f + 0.2f;
+			stats.SetTime(maxTime);
+			stats.SetDistance(cart.Distance());
+			stats.LogStats();
             StateManager.Instance.CurrentState = StateManager.State.GAMEOVER;
         }
         else if (timer >= maxTime - warningTime)
@@ -96,6 +99,9 @@ public class GUIScript : MonoBehaviour {
 
 		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
 		{
+			GUILayout.Box ("STATS");
+			GUILayout.Box ("DISTANCE TRAVELED: " + stats.Distance);
+			GUILayout.Box ("SCORE: " + stats.Score);
 			GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.3f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
 			        "GAME\nOVER");
 			
