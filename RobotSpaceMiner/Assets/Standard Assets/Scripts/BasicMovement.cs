@@ -8,6 +8,7 @@ public class BasicMovement : MonoBehaviour {
     public Camera mainCamera;
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
+
     private Vector3 moveNormal;
     private float offsetX = -6f, offsetY = 7, distanceToGround;
     private Camera chase, car;
@@ -24,16 +25,63 @@ public class BasicMovement : MonoBehaviour {
 
     void Update()
     {
-        Gravity();
         if (StateManager.Instance.CurrentState == StateManager.State.PLAYING)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Pumped();
+                Move();
             }
 
         }
 
+        DownhillCheck();
+
+        CameraFollow();
+
+    }
+
+    public void Move() {
+
+        // User based movement if the cart is going uphill.
+        if (cartDistance.Distance() <= 400 || this.transform.rotation.z > 0.001f)
+        {
+			if (StateManager.Instance.TimerPause)
+			{
+				StateManager.Instance.StartTimer();
+			}
+            if (rigidbody.velocity.x <= maxVelocity)
+            {
+                rigidbody.AddForce(new Vector3(7500, 0, 0));
+            }
+        }
+
+        CheckVelocity();
+    }
+
+    void CheckVelocity()
+    {
+        // Cap the velocity
+        if (rigidbody.velocity.x > maxVelocity)
+        {
+            rigidbody.velocity = new Vector3(maxVelocity, rigidbody.velocity.y, rigidbody.velocity.z);
+        }
+    }
+
+    void CameraFollow() {
+
+        mainCamera.transform.position = new Vector3(this.transform.position.x + offsetX, this.transform.position.y + offsetY, -20);
+    }
+
+
+    internal float Velocity()
+    {
+        return rigidbody.velocity.x;
+    }
+
+    void DownhillCheck()
+    {
+        // If the cart has no rotation, enable obstacle spawning
+        // Also add a constant force to the cart
         if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
         {
             downhill.enabled = true;
@@ -49,60 +97,5 @@ public class BasicMovement : MonoBehaviour {
             mainCamera.camera.enabled = true;
             car.enabled = false;
         }
-
-        CameraFollow();
-
-    }
-
-    public void Pumped() {
-
-        if (cartDistance.Distance() <= 400 || this.transform.rotation.z > 0.001f)
-        {
-			if (StateManager.Instance.TimerPause)
-			{
-				StateManager.Instance.StartTimer();
-			}
-            if (rigidbody.velocity.x <= maxVelocity && IsGrounded())
-            {
-                rigidbody.AddForce(new Vector3(7500, 0, 0));
-            }
-        }
-
-
-        CheckVelocity();
-        
-
-    }
-
-    void CheckVelocity()
-    {
-        // Cap the velocity
-        if (rigidbody.velocity.x > maxVelocity)
-        {
-            rigidbody.velocity = new Vector3(maxVelocity, rigidbody.velocity.y, rigidbody.velocity.z);
-        }
-    }
-
-    void Gravity() {
-        
-        moveNormal = -this.transform.up;
-
-        /* Gravity always in carts -y direction */
-        //Physics.gravity = moveNormal * 100;
-        //Physics.gravity = new Vector3(0, -27, 0);
-    }
-
-    void CameraFollow() {
-
-        mainCamera.transform.position = new Vector3(this.transform.position.x + offsetX, this.transform.position.y + offsetY, -20);
-    }
-
-    internal bool IsGrounded() {
-        return !Physics.Raycast(transform.position, -Vector3.up, distanceToGround - 0.5f);
-    }
-
-    internal float Velocity()
-    {
-        return rigidbody.velocity.x;
     }
 }

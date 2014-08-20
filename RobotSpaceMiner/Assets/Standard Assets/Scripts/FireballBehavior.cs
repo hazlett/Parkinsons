@@ -7,57 +7,61 @@ public class FireballBehavior : MonoBehaviour {
     private int cubeNumber;
     public int CubeNumber { set {cubeNumber = value;} }
     private GameObject cart;
-    private CubeGridCollider topLeft, topCenter, topRight, middleLeft, middleCenter, middleRight;
-	// Use this for initialization
+    private CubeGridCollider cubeGrid;
+
 	void Start () {
 
         cart = GameObject.Find("Cart");
-
-        topLeft = GameObject.Find("TopLeft").GetComponent<CubeGridCollider>();
-        topCenter = GameObject.Find("TopCenter").GetComponent<CubeGridCollider>();
-        topRight = GameObject.Find("TopRight").GetComponent<CubeGridCollider>();
-        middleLeft = GameObject.Find("MiddleLeft").GetComponent<CubeGridCollider>();
-        middleCenter = GameObject.Find("MiddleCenter").GetComponent<CubeGridCollider>();
-        middleRight = GameObject.Find("MiddleRight").GetComponent<CubeGridCollider>();
+        setCube();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f)
+        if (cart.transform.rotation.z > 0.001f || cart.transform.rotation.z < -0.001f || StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
         {
             DeactivateCube();
             GameObject.Destroy(this.gameObject);
         }
+
+        // If the cart is extremely close to the hazard and hasn't shot it, detonate the explosion
         if (this.transform.position.x - cart.transform.position.x < explosionDistance)
         {
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
             explosion.transform.position = this.transform.position;
 
+            // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-25000, 0, 0));
 			cart.GetComponent<GameStats>().AddScore(-25);
+
+            // Turning off cube grid
             DeactivateCube();
 
             GameObject.Destroy(this.gameObject);
         }
 	}
 
-    void DeactivateCube()
+    void setCube()
     {
         switch (cubeNumber)
         {
-            case 0: topLeft.DeactivateHit();
+            case 0: cubeGrid = GameObject.Find("TopLeft").GetComponent<CubeGridCollider>();
                 break;
-            case 1: topCenter.DeactivateHit();
+            case 1: cubeGrid = GameObject.Find("TopCenter").GetComponent<CubeGridCollider>();
                 break;
-            case 2: topRight.DeactivateHit();
+            case 2: cubeGrid = GameObject.Find("TopRight").GetComponent<CubeGridCollider>();
                 break;
-            case 3: middleLeft.DeactivateHit();
+            case 3: cubeGrid = GameObject.Find("MiddleLeft").GetComponent<CubeGridCollider>();
                 break;
-            case 4: middleCenter.DeactivateHit();
+            case 4: cubeGrid = GameObject.Find("MiddleCenter").GetComponent<CubeGridCollider>();
                 break;
-            case 5: middleRight.DeactivateHit();
+            case 5: cubeGrid = GameObject.Find("MiddleRight").GetComponent<CubeGridCollider>();
                 break;
         }
+    }
+
+    void DeactivateCube()
+    {
+        cubeGrid.DeactivateHit();
     }
 }
