@@ -7,17 +7,17 @@ public class GUIScript : MonoBehaviour {
     public BasicMovement movement;
 	public GUISkin Skin;
 	public GameStats stats;
-    public Texture2D logo, screenFlash;
+    public Texture2D logo;
     private GUIStyle logoStyle = new GUIStyle();
 
 	public GUIText guiText;
 	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
-	private float maxTime = 30.0f, timer, minutes, seconds, warningTime = 5.0f;
+	private float maxTime = 300.0f, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
-	private float timerAlpha = 1.0f, hitAlpha = 0.0f;
+    private float timerAlpha = 1.0f;
 
 	void Start()
 	{
@@ -116,8 +116,6 @@ public class GUIScript : MonoBehaviour {
             GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.5f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
                                 "GAME PAUSED");
         }
-        GUI.color = new Color(1, 1, 1, hitAlpha);
-        GUI.DrawTexture(new Rect(0, 0, scaledResolutionWidth, nativeVerticalResolution), screenFlash);
         color.a = timerAlpha;
         GUI.color = color;
         GUI.Label(new Rect (scaledResolutionWidth / 2 - (scaledResolutionWidth / 10f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 5,

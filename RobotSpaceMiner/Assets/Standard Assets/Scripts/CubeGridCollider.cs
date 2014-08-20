@@ -4,7 +4,8 @@ using System.Collections;
 public class CubeGridCollider : MonoBehaviour {
 
     private Color transparent = new Color(1, 1, 1, 0);
-    private Color indicatorOn = new Color(0, 0.95f, 1, 0.5f);
+    private Color indicatorOn = new Color(0, 0.59f, 1, 0.4f);
+    private int onCount;
 
 	// Use this for initialization
 	void Start () {
@@ -37,13 +38,25 @@ public class CubeGridCollider : MonoBehaviour {
     // Turn cube indicator on
     internal void Activate()
     {
+        onCount++;
+        indicatorOn.a +=  0.125f;
         this.renderer.material.color = indicatorOn;
     }
 
     // And shoot an iceball out of the cube
     void Deactivate()
     {
-        this.renderer.material.color = transparent;
+        onCount--;
+        if (onCount >= 0)
+        {
+            indicatorOn.a -= 0.125f;
+            this.renderer.material.color = indicatorOn;
+        }
+
+        if (onCount == 0)
+        {
+            this.renderer.material.color = transparent;
+        }
 
         GameObject iceball;
         iceball = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Iceball"));
@@ -52,6 +65,10 @@ public class CubeGridCollider : MonoBehaviour {
 
     internal void DeactivateHit()
     {
-        this.renderer.material.color = transparent;
+        onCount--;
+        if (onCount == 0)
+        {
+            this.renderer.material.color = transparent;
+        }
     }
 }

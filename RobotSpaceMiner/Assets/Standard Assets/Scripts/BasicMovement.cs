@@ -72,7 +72,23 @@ public class BasicMovement : MonoBehaviour {
 
     void SetForceOnCart()
     {
-        forceOnCart = 7500;
+        switch (PlayerSettings.Instance.Age)
+        {
+            case 65: forceOnCart = 10000;
+                break;
+            case 70: forceOnCart = 12500;
+                break;
+            case 75: forceOnCart = 15000;
+                break;
+            case 80: forceOnCart = 17500;
+                break;
+            case 85: forceOnCart = 20000;
+                break;
+            case 90: forceOnCart = 22500;
+                break;
+            default: forceOnCart = 7500;
+                break;
+        }
     }
 
     void DownhillCheck()

@@ -13,7 +13,7 @@ public class IceballMovement : MonoBehaviour {
         {
             // If the iceball collides with the hazard, spawn fireworks and increase score
             GameObject destroyedFireworks;
-            destroyedFireworks = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/GreenFireworks"));
+            destroyedFireworks = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Fireworks"));
             destroyedFireworks.transform.position = this.transform.position;
 
 			GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
