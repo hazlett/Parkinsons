@@ -7,6 +7,8 @@ public class KeyboardController : MonoBehaviour {
 
 	public CubeGridCollider topRight, topCenter, topLeft, middleRight, middleCenter, middleLeft, bottomRight, bottomCenter, bottomLeft;
 	private IDictionary<KeyCode, IGestureAction> keyMapping;
+	public SitStandTutor tutor;
+	public BasicMovement cart;
 
 	void Start () {
 		keyMapping = new Dictionary<KeyCode, IGestureAction> ();
@@ -28,7 +30,10 @@ public class KeyboardController : MonoBehaviour {
 		keyMapping.Add (KeyCode.U, new TouchTopLeft (topLeft));
 		keyMapping.Add (KeyCode.I, new TouchTopLeft (topCenter));
 		keyMapping.Add (KeyCode.O, new TouchTopLeft (topRight));
-
+		keyMapping.Add (KeyCode.W, new StandTutorial (tutor));
+		keyMapping.Add (KeyCode.S, new SitTutorial (tutor));
+		keyMapping.Add (KeyCode.RightArrow, new MoveCart (cart));
+		keyMapping.Add (KeyCode.E, new ContinueTutorial (tutor));
 	}
 
 	void Update () {
@@ -39,7 +44,6 @@ public class KeyboardController : MonoBehaviour {
 			{
 				keyMapping[code].Trigger(null);
 			}
-		}
-		
+		}		
 	}
 }

@@ -63,9 +63,6 @@
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\ChaseCamera.cs" />
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\CoinPickup.cs" />
      <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\GestureScripts\ContinueTutorial.cs" />
-     <Compile Include="Assets\GestureScripts\GestureManagerScript.cs" />
-     <Compile Include="Assets\GestureScripts\MoveCart.cs" />
      <Compile Include="Assets\GesturesDemo\Scripts\GestureListener.cs" />
      <Compile Include="Assets\GesturesDemo\Scripts\PresentationScript.cs" />
      <Compile Include="Assets\InteractionDemo\Scripts\GrabDropScript.cs" />
@@ -85,9 +82,6 @@
      <Compile Include="Assets\KinectScripts\KinectManager.cs" />
      <Compile Include="Assets\KinectScripts\KinectServer.cs" />
      <Compile Include="Assets\TutorGui.cs" />
-     <Compile Include="Assets\Tutorial\SitStandTutor.cs" />
-     <Compile Include="Assets\Tutorial\SitTutorial.cs" />
-     <Compile Include="Assets\Tutorial\StandTutorial.cs" />
      <Compile Include="Assets\Tutorial\TutorialManager.cs" />
      <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />

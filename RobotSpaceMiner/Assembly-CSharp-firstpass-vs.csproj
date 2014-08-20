@@ -46,9 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\DataLogger.cs" />
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\GameStats.cs" />
-     <Compile Include="Assets\Standard Assets\GUI\Scripts\StateManager.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
@@ -70,23 +67,32 @@
      <Compile Include="Assets\Standard Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ChaseCam.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\ContinueTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CubeGridCollider.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DataLogger.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomCenter.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomLeft.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchBottomRight.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchMiddleCenter.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchMiddleLeft.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchMiddleRight.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopCenter.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopLeft.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DebugScripts\TouchTopRight.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\DistanceTraveled.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\FireballBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\GUIScript.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\GameStats.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\GestureManagerScript.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\KeyboardController.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleCenter.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleLeft.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\TouchMiddleRight.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\SitStandTutor.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\SitTutorial.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\CarCamera.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Fog.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Kart.cs" />

@@ -25,14 +25,6 @@ public class BasicMovement : MonoBehaviour {
     void Update()
     {
         Gravity();
-        if (StateManager.Instance.CurrentState == StateManager.State.PLAYING)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                Pumped();
-            }
-
-        }
 
         if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
         {

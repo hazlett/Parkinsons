@@ -17,7 +17,7 @@ public class IceballMovement : MonoBehaviour {
             destroyedFireworks = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/GreenFireworks"));
             destroyedFireworks.transform.position = this.transform.position;
 
-			GameObject.Find("Cart").GetComponent<GameStats>().AddScore(50);
+			GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
 
             GameObject.Destroy(collider.gameObject);
             GameObject.Destroy(this.gameObject);          
