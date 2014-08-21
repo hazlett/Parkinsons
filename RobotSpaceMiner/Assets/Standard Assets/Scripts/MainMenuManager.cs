@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour {
 
     void Start () {
         StateManager.Instance.CurrentState = StateManager.State.MENU;
-        
 	}
 	
 	void Update()
@@ -21,6 +20,7 @@ public class MainMenuManager : MonoBehaviour {
 
     void OnGUI()
     {
+        
         GUI.skin = skin;
         
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1));

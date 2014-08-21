@@ -43,6 +43,7 @@ public class SettingsMenu : MonoBehaviour {
         timerCleared = false;
         ageCleared = false;
         errorMessage = false;
+        GUI.FocusControl(null);
     }
 
     void Update()
