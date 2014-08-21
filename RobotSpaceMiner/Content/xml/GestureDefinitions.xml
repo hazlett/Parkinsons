@@ -56,5 +56,20 @@
     </state>
   </gesture>
 
+  <gesture name="run">
+    <state name="initial" order="0">
+      <criterion ref="knee-hip-angle" plane="yz"
+                 compare="gt" value="90"/>
+      <criterion ref="secondary-knee-hip-angle" plane="yz"
+                 compare="lt" value="90"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="knee-hip-angle" plane="yz"
+                 compare="lt" value="90"/>
+      <criterion ref="secondary-knee-hip-angle" plane="yz"
+                 compare="gt" value="90"/>
+    </state>
+  </gesture>
+
 
 </gestures>

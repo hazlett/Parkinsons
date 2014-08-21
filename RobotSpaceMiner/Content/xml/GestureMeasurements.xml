@@ -142,6 +142,23 @@
     </vector>
   </angle>
 
+  <angle name="knee-hip-angle">
+    <vector type="default">
+      <joint skeletal-joint="knee" side="primary" order="0"/>
+      <joint skeletal-joint="hip-center" side="primary" order="1"/>
+    </vector>
+    <vector type="body-y-axis"/>
+  </angle>
+
+  <angle name="secondary-knee-hip-angle">
+    <vector type="default">
+      <joint skeletal-joint="knee" side="secondary" order="0"/>
+      <joint skeletal-joint="hip-center" side="primary" order="1"/>
+    </vector>
+    <vector type="body-y-axis"/>
+  </angle>
+  
+  
    <vector name="secondary-hip-center-hand-vector">
     <joint skeletal-joint="hip-center" side="secondary"
     order="0"/>
@@ -197,4 +214,6 @@
     <joint skeletal-joint="hand-tip" side="primary" order="1"/>
   </vector>
 
+  
+  
 </measurements>

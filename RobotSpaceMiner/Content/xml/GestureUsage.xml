@@ -18,6 +18,9 @@
       <binding gameAction="sit">
         <gesture name="sit" level="1"/>
       </binding>
+      <binding gameAction="run">
+        <gesture name="run" level="1"/>
+      </binding>
     </section>
 
     <section name="tutorial">
