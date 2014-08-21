@@ -63,6 +63,7 @@
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\BackgroundManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ChaseCam.cs" />
@@ -137,10 +138,10 @@
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
