@@ -14,7 +14,7 @@ public class LevelSystem {
     private LevelSystem()
     {
         level = 1;
-        levelUpRequirement = 10;
+        levelUpRequirement = 2;
     }
 
     public static LevelSystem Instance
