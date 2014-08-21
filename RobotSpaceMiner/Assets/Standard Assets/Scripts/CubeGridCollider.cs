@@ -66,6 +66,11 @@ public class CubeGridCollider : MonoBehaviour {
     internal void DeactivateHit()
     {
         onCount--;
+        if (onCount >= 0)
+        {
+            indicatorOn.a -= 0.125f;
+            this.renderer.material.color = indicatorOn;
+        }
         if (onCount == 0)
         {
             this.renderer.material.color = transparent;

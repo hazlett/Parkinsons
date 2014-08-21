@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ObstacleSpawner : MonoBehaviour {
 
-    private float startSpawn, previousSpawn, spawnDistance, spawnRate;
+    private int successfulHitCount, totalHits, missCount;
+    private float startSpawn, previousSpawn, spawnDistance, spawnRate, baseRate;
     private BasicMovement cart;
     private GameObject topLeftCube, topCenterCube, topRightCube, middleLeftCube, middleCenterCube, middleRightCube;
     private CubeGridCollider topLeft, topCenter, topRight, middleLeft, middleCenter, middleRight;
@@ -40,12 +41,13 @@ public class ObstacleSpawner : MonoBehaviour {
         middleRight = middleRightCube.GetComponent<CubeGridCollider>();
 
         StartSpawnRate();
-        previousSpawn = 0;
+        previousSpawn = successfulHitCount = totalHits = 0;
 	}
 	
 	void Update () {
 
         CheckCart();
+        HitCount();
 	}
 
     void CheckCart(){
@@ -108,25 +110,55 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void StartSpawnRate()
     {
-        spawnDistance = 250;
-
+        spawnDistance = 200;
         switch (PlayerSettings.Instance.Age)
         {
-            case 65: spawnRate = 1000;
+            case 65: baseRate = spawnRate = 1000;
                 break;
-            case 70: spawnRate = 50;
+            case 70: baseRate = spawnRate = 200;
                 break;
-            case 75: spawnRate = 1200;
+            case 75: baseRate = spawnRate = 1200;
                 break;
-            case 80: spawnRate = 1300;
+            case 80: baseRate = spawnRate = 1300;
                 break;
-            case 85: spawnRate = 1400;
+            case 85: baseRate = spawnRate = 1400;
                 break;
-            case 90: spawnRate = 1500;
+            case 90: baseRate = spawnRate = 1500;
                 break;
-            default: spawnRate = 750;
+            default: baseRate = spawnRate = 750;
                 break;
         }
+    }
+
+    void HitCount()
+    {
+        if(successfulHitCount - LevelSystem.Instance.LevelUpRequirement >= 0)
+        {
+            successfulHitCount = 0;
+            LevelSystem.Instance.LevelUpRequirement += 2;
+            SetSpawnRate();
+        }
+    }
+
+    void SetSpawnRate()
+    {
+        spawnRate = baseRate - (LevelSystem.Instance.Level * 25);
+        if (spawnRate < 15)
+        {
+            spawnRate = 15;
+        }
+        LevelSystem.Instance.LevelIncrease();
+    }
+
+    public void IncreaseHitCount()
+    {
+        successfulHitCount++;
+        totalHits++;
+    }
+
+    public void IncreaseMissCount()
+    {
+        missCount++;
     }
 
 }

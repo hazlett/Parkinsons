@@ -3,8 +3,10 @@ using System.Collections;
 
 public class IceballMovement : MonoBehaviour {
 
+    private ObstacleSpawner spawner;
 	void Start () {
-        this.rigidbody.velocity = new Vector3(60, 0, 0); 
+        this.rigidbody.velocity = new Vector3(60, 0, 0);
+        spawner = GameObject.Find("Main Camera").GetComponent<ObstacleSpawner>();
 	}
 
     void OnTriggerEnter(Collider collider)
@@ -15,6 +17,7 @@ public class IceballMovement : MonoBehaviour {
             GameObject destroyedFireworks;
             destroyedFireworks = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Fireworks"));
             destroyedFireworks.transform.position = this.transform.position;
+            spawner.IncreaseHitCount();
 
 			GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
 
