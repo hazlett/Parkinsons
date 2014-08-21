@@ -13,15 +13,15 @@ public class TutorGui : MonoBehaviour {
 		GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
 
 		GUI.Box (new Rect (scaledResolutionWidth * 0.2f - (scaledResolutionWidth / 10f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 4,
-		                  nativeVerticalResolution / 5), tutor.GetMessage ());
+		                  nativeVerticalResolution / 4), tutor.GetMessage ());
 
 		GUI.Box (new Rect (scaledResolutionWidth * 0.8f - (scaledResolutionWidth / 5f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 4,
 		                   nativeVerticalResolution / 10), "(This is you)");
 
-		if (tutor.CanContinue)
+		if (false)
 		{
 			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10f), nativeVerticalResolution * 0.5f, scaledResolutionWidth / 4,
-			                  nativeVerticalResolution / 5), "RAISE RIGHT HAND\nTO CONTINUE"))
+			                  nativeVerticalResolution / 4), "RAISE RIGHT HAND\nTO CONTINUE"))
 			{
 				tutor.Continue();
 			}

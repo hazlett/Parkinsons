@@ -95,6 +95,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\SettingsSerializer.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitStandTutor.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitTutorial.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\SittingRunTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\XmlSettings.cs" />
