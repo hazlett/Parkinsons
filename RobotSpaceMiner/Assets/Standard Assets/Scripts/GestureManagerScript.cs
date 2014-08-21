@@ -88,6 +88,10 @@ public class GestureManagerScript : MonoBehaviour {
            {
                rv = new MoveCart(move);
            }
+           if (name == "run")
+           {
+               rv = new RunMovement(move);
+           }
        }
        if (sectionName == "tutorial")
        {

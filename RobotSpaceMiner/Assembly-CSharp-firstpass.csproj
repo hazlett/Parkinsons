@@ -91,6 +91,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PlayerSettings.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\RunMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsMenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsSerializer.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SitStandTutor.cs" />
@@ -137,10 +138,10 @@
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/hazlett/Desktop/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

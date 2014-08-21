@@ -10,7 +10,7 @@ public class BasicMovement : MonoBehaviour {
     public ConstantForce downhill;
 
     private Vector3 moveNormal;
-    private float offsetX = -6f, offsetY = 7, forceOnCart;
+    private float offsetX = -4f, offsetY = 6, offsetZ = -18f, forceOnCart;
     private Camera chase, car;
 
     void Start()
@@ -62,7 +62,7 @@ public class BasicMovement : MonoBehaviour {
 
     void CameraFollow() {
 
-        mainCamera.transform.position = new Vector3(this.transform.position.x + offsetX, this.transform.position.y + offsetY, -20);
+        mainCamera.transform.position = new Vector3(this.transform.position.x + offsetX, this.transform.position.y + offsetY, this.transform.position.z + offsetZ);
     }
 
     internal float Velocity()
