@@ -8,11 +8,13 @@ public class FireballBehavior : MonoBehaviour {
     public int CubeNumber { set {cubeNumber = value;} }
     private GameObject cart;
     private CubeGridCollider cubeGrid;
+    private ObstacleSpawner spawner;
 
 	void Start () {
 
         cart = GameObject.Find("Cart");
         setCube();
+        spawner = GameObject.Find("Main Camera").GetComponent<ObstacleSpawner>();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +30,7 @@ public class FireballBehavior : MonoBehaviour {
         if (this.transform.position.x - cart.transform.position.x < explosionDistance)
         {
             DeactivateCube();
+            spawner.IncreaseMissCount();
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
             explosion.transform.position = this.transform.position;
 

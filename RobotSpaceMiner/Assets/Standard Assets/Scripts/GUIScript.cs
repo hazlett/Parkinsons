@@ -134,7 +134,7 @@ public class GUIScript : MonoBehaviour {
 		color.a = 1.0f;
 		GUI.color = color;
         GUI.DrawTexture(new Rect(scaledResolutionWidth - logo.width - 15f, nativeVerticalResolution - logo.height - 15f, logo.width, logo.height), logo);
-		GUILayout.Box ("Score: " + stats.Score);
+		GUILayout.Box("Score: " + stats.Score);
 		GUILayout.Box("Distance: " + cart.Distance() + " meters");
         GUILayout.Box("Velocity: " + Mathf.Floor(movement.Velocity()) + " m/s");
 	}
