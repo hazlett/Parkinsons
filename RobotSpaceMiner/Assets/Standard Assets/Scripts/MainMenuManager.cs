@@ -6,9 +6,11 @@ public class MainMenuManager : MonoBehaviour {
     public GUISkin skin;
     public GameObject settings;
 	private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
-	// Use this for initialization
-	void Start () {
+    private XmlSettings playerSettings;
+
+    void Start () {
         StateManager.Instance.CurrentState = StateManager.State.MENU;
+        
 	}
 	
 	void Update()
@@ -23,7 +25,16 @@ public class MainMenuManager : MonoBehaviour {
         
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1));
         GUI.DrawTexture(new Rect(0, 0, scaledResolutionWidth, nativeVerticalResolution), backgroundImage);
- 
+
+        GUI.Label(new Rect(
+            scaledResolutionWidth * 0.5f - (GUI.skin.label.fixedWidth / 2),
+            nativeVerticalResolution * 0.60f,
+            skin.label.fixedWidth,
+            nativeVerticalResolution / 5),
+            ("AGE: " + PlayerSettings.Instance.Age +
+            "\nGENDER: " + PlayerSettings.Instance.GetSettings().GetGenderString() + 
+            "\nTIMER: " + PlayerSettings.Instance.Timer));
+
         if (GUI.Button(new Rect(
             scaledResolutionWidth * 0.5f - (GUI.skin.button.fixedWidth / 2),
             nativeVerticalResolution * 0.3f,

@@ -5,6 +5,9 @@ using System;
 public class SettingsMenu : MonoBehaviour {
     public GUISkin skin;
     public Texture2D background;
+    private string message;
+    private bool errorMessage;
+    private string messageEnd;
     public string age = "";
     private bool ageCleared;
     public string timer = "";
@@ -29,12 +32,18 @@ public class SettingsMenu : MonoBehaviour {
             (2 * genderButton) + 
             15.0f;
 		settings = SettingsSerializer.Instance.ReadSettings ();
-        ageCleared = false;
-        timerCleared = false;
-		age = PlayerSettings.Instance.Age.ToString();
-		timer = PlayerSettings.Instance.Timer.ToString();
-		male = (PlayerSettings.Instance.Gender == 0);
+		male = (PlayerSettings.Instance.Gender == (int)XmlSettings.Genders.Male);
+        messageEnd = "\n-PLEASE TRY AGAIN-";
 	}
+
+    void OnEnable()
+    {
+        age = PlayerSettings.Instance.Age.ToString();
+        timer = PlayerSettings.Instance.Timer.ToString();
+        timerCleared = false;
+        ageCleared = false;
+        errorMessage = false;
+    }
 
     void Update()
     {
@@ -69,6 +78,8 @@ public class SettingsMenu : MonoBehaviour {
                 ageCleared = true;
             }
         }
+        else
+            ageCleared = false;
 		GUI.Label (new Rect(
             scaledResolutionWidth * 0.5f + (skin.textField.fixedWidth / 2),
             nativeVerticalResolution * ageHeight,
@@ -98,6 +109,8 @@ public class SettingsMenu : MonoBehaviour {
                 timerCleared = true;
             }
         }
+        else
+            timerCleared = false;
 		GUI.Label (new Rect(
             scaledResolutionWidth * 0.5f + (skin.textField.fixedWidth / 2),
             nativeVerticalResolution * timerHeight,
@@ -162,7 +175,6 @@ public class SettingsMenu : MonoBehaviour {
             "APPLY AND BACK"))
         {
             Apply();
-            Back();
         }
         if (GUI.Button(new Rect(
             scaledResolutionWidth * 0.5f - (applyAndExitButton / 2),
@@ -173,6 +185,16 @@ public class SettingsMenu : MonoBehaviour {
         {
             Back();
         }
+
+        if (errorMessage)
+        {
+            GUI.Box(new Rect(
+                scaledResolutionWidth * 0.5f - (skin.box.fixedWidth / 2),
+                nativeVerticalResolution * 0.21f - (nativeVerticalResolution / 5),
+                scaledResolutionWidth / 5,
+                nativeVerticalResolution / 5),
+                message + messageEnd);
+        }
     }
 	private void Back()
 	{
@@ -181,15 +203,63 @@ public class SettingsMenu : MonoBehaviour {
 	}
     private void Apply()
     {
+        int ageInt, timerInt;
         try
         {
-            settings = new XmlSettings(int.Parse(age), int.Parse(timer), Convert.ToInt32(!male));
+            ageInt = int.Parse(age);
+            if (ageInt <= 0)
+            {
+                message = "AGE MUST BE GREATER THAN 0";
+                errorMessage = true;
+                return;
+            }
+            else if (ageInt >= 150)
+            {
+                message = "AGE MUST BE LESS THAN 150";
+                errorMessage = true;
+                return;
+            }
+        }
+        catch (Exception)
+        {
+            message = "AGE IS IN INCORRECT FORMAT\nPLEASE ENTER A WHOLE NUMBER";
+            errorMessage = true;
+            return;
+        }
+        try
+        {
+            timerInt = int.Parse(timer);
+            if (timerInt <= 0)
+            {
+                message = "TIME MUST BE GREATER THAN 0 SECONDS";
+                errorMessage = true;
+                return;
+            }
+            else if (timerInt > 300)
+            {
+                message = "TIME MUST BE LESS THAN 300 SECONDS";
+                errorMessage = true;
+                return;
+            }
+        }
+        catch (Exception)
+        {
+            message = "TIME IS IN INCORRECT FORMAT\nPLEASE ENTER A WHOLE NUMBER";
+            errorMessage = true;
+            return;
+        }
+      
+        try
+        {
+            settings = new XmlSettings(ageInt, timerInt, Convert.ToInt32(!male));
 			PlayerSettings.Instance.SetSettings(settings);
+            Back();
         }
         catch (Exception e) {
-            settings = new XmlSettings(65, 180, 0);
-            PlayerSettings.Instance.SetSettings(settings);
 			Debug.LogError(e.Message);
+            message = "UNEXPECTED ERROR";
+            messageEnd = "\nPLEASE CONTINUE WITHOUT SAVING";
+            errorMessage = true;
 		}
     }
 }

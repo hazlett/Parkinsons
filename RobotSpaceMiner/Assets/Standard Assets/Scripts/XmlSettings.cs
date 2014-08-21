@@ -14,7 +14,7 @@ public class XmlSettings {
     [XmlAttribute]
     public int Gender;
 
-    enum Genders {
+    public enum Genders {
         Male,
         Female
     };
@@ -30,10 +30,20 @@ public class XmlSettings {
 
 
     }
-    
+
+    public string GetGenderString()
+    {
+        string gender;
+        if (Gender == (int)Genders.Male)
+            gender = "MALE";
+        else
+            gender = "FEMALE";
+        return gender;
+    }
+
     public override string ToString()
     {
-        return ("Age: " + Age + " Timer: " + Time + " Gender: " + Gender);
+        return ("Age: " + Age + " Gender: " + GetGenderString() + " Timer: " + Time);
     }
 	
 }
