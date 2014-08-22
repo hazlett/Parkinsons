@@ -14,7 +14,7 @@ public class FireballBehavior : MonoBehaviour {
 
         cart = GameObject.Find("Cart");
         setCube();
-        spawner = GameObject.Find("Main Camera").GetComponent<ObstacleSpawner>();
+        spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
 	}
 	
 	// Update is called once per frame

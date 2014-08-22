@@ -13,11 +13,22 @@ public class BasicMovement : MonoBehaviour {
     private float offsetX = -4f, offsetY = 6, offsetZ = -18f, forceOnCart;
     private Camera chase, car;
 
+    private enum trackNumber
+    {
+        LEFT,
+        CENTER,
+        RIGHT
+    }
+
+    private trackNumber currentTrack;
+
     void Start()
     {
         SetForceOnCart();
         downhill.force = new Vector3(100, 0, 0);
         downhill.enabled = false;
+
+        currentTrack = trackNumber.CENTER;
 
         chase = GameObject.Find("Chase Camera").camera;
         car = GameObject.Find("First Person Camera").camera;
@@ -28,6 +39,16 @@ public class BasicMovement : MonoBehaviour {
         DownhillCheck();
 
         CameraFollow();
+
+        if (StateManager.Instance.Roadblocks)
+        {
+            if(Input.GetKeyDown(KeyCode.UpArrow)) {
+                HopLeft();
+            }
+            else if(Input.GetKeyDown(KeyCode.DownArrow)) {
+                HopRight();
+            }
+        }
 
     }
 
@@ -91,22 +112,77 @@ public class BasicMovement : MonoBehaviour {
         }
     }
 
+    void HopLeft()
+    {
+        if (currentTrack != trackNumber.LEFT)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z - 10);
+            if(currentTrack == trackNumber.CENTER) {
+                currentTrack = trackNumber.LEFT;
+            }
+            else {
+                currentTrack = trackNumber.CENTER;
+            }
+        }
+    }
+
+    void HopRight()
+    {
+        if (currentTrack != trackNumber.RIGHT)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + 10);
+            if (currentTrack == trackNumber.CENTER)
+            {
+                currentTrack = trackNumber.RIGHT;
+            }
+            else
+            {
+                currentTrack = trackNumber.CENTER;
+            }
+        }
+    }
+
     void DownhillCheck()
     {
         if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
         {
             downhill.enabled = true;
-            StateManager.Instance.Downhill = true;
+
+            if (!StateManager.Instance.Cave)
+            {
+                StateManager.Instance.Roadblocks = true;
+                StateManager.Instance.FireHazards = false;
+            }
+            else
+            {
+                StateManager.Instance.FireHazards = true;
+                CenterCart();
+                StateManager.Instance.Roadblocks = false;
+            }
+
             mainCamera.camera.enabled = false;
             chase.enabled = false;
             car.enabled = true;
         }
         else
         {
+            StateManager.Instance.Roadblocks = false;
+            StateManager.Instance.FireHazards = false;
             downhill.enabled = false;
-            StateManager.Instance.Downhill = false;
             mainCamera.camera.enabled = true;
             car.enabled = false;
+        }
+    }
+
+    void CenterCart()
+    {
+        if (currentTrack == trackNumber.RIGHT)
+        {
+            HopLeft();
+        }
+        else if (currentTrack == trackNumber.LEFT)
+        {
+            HopRight();
         }
     }
 }

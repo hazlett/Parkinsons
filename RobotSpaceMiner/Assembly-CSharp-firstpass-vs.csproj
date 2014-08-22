@@ -65,6 +65,7 @@
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CameraSwitch.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\CaveBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ChaseCam.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ContinueTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CubeGridCollider.cs" />
@@ -91,6 +92,8 @@
      <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PlayerSettings.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\RoadblockBehavior.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\RoadblockSpawner.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\RunMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsMenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\SettingsSerializer.cs" />

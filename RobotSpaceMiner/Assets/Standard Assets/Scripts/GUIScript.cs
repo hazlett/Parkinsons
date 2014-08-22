@@ -30,7 +30,7 @@ public class GUIScript : MonoBehaviour {
 	{
 		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
 			return;
-		if (StateManager.Instance.Downhill) {
+		if (StateManager.Instance.FireHazards) {
 			message = "Push blue squares with your hand as they appear";
 		}
 		else

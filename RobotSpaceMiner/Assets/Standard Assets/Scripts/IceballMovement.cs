@@ -6,7 +6,7 @@ public class IceballMovement : MonoBehaviour {
     private ObstacleSpawner spawner;
 	void Start () {
         this.rigidbody.velocity = new Vector3(60, 0, 0);
-        spawner = GameObject.Find("Main Camera").GetComponent<ObstacleSpawner>();
+        spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
 	}
 
     void OnTriggerEnter(Collider collider)

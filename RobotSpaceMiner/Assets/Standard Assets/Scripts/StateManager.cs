@@ -13,8 +13,15 @@ public class StateManager {
         MENU
     };
 
-	private bool downhill = false;
-	public bool Downhill { get { return downhill; } set { downhill = value; } } 
+	private bool fireHazards = false;
+	public bool FireHazards { get { return fireHazards; } set { fireHazards = value; } }
+
+    private bool roadblocks = false;
+    public bool Roadblocks { get { return roadblocks; } set { roadblocks = value; } }
+
+    private bool cave = false;
+    public bool Cave { get { return cave; } set { cave = value; } } 
+
 	private bool timerPause = true;
 	public bool TimerPause { get { return timerPause; } }
     private static StateManager instance = new StateManager();

@@ -42,6 +42,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
         StartSpawnRate();
         previousSpawn = successfulHitCount = totalHits = 0;
+        startSpawn = 1000;
 	}
 	
 	void Update () {
@@ -53,7 +54,7 @@ public class ObstacleSpawner : MonoBehaviour {
     void CheckCart(){
 
         // Check if the cart is in the right position to spawn a new hazard
-        if(cart.transform.position.x > 400 && ((cart.transform.position.x - previousSpawn) > spawnRate) && (cart.transform.rotation.z < 0.01f)) {
+        if(StateManager.Instance.FireHazards && cart.transform.position.x > startSpawn && (cart.transform.position.x - previousSpawn) > spawnRate) {
 
             previousSpawn = (int)cart.transform.position.x;
             if (StateManager.Instance.CurrentState == StateManager.State.PLAYING)
