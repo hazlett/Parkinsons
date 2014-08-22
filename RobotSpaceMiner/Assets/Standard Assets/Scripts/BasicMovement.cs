@@ -40,17 +40,16 @@ public class BasicMovement : MonoBehaviour {
 
         CameraFollow();
 
-        if (StateManager.Instance.Roadblocks)
-        {
-            if(Input.GetKeyDown(KeyCode.UpArrow)) {
-                HopLeft();
-            }
-            else if(Input.GetKeyDown(KeyCode.DownArrow)) {
-                HopRight();
-            }
-        }
-
     }
+
+	public void TriggerHopLeft()
+	{
+		HopLeft ();
+	}
+	public void TriggerHopRight()
+	{
+		HopRight ();
+	}
 
     public void Move() {
 

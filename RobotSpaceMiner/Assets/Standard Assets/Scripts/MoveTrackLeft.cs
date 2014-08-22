@@ -11,6 +11,6 @@ public class MoveTrackLeft : IGestureAction {
 	}
 	public void Trigger(object data)
 	{
-
+		cart.TriggerHopLeft ();
 	}
 }
