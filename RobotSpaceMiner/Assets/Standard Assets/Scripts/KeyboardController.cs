@@ -30,9 +30,10 @@ public class KeyboardController : MonoBehaviour {
 		keyMapping.Add (KeyCode.U, new TouchTopLeft (topLeft));
 		keyMapping.Add (KeyCode.I, new TouchTopLeft (topCenter));
 		keyMapping.Add (KeyCode.O, new TouchTopLeft (topRight));
+        keyMapping.Add (KeyCode.RightArrow, new MoveCart (cart));
 		keyMapping.Add (KeyCode.W, new StandTutorial (tutor));
 		keyMapping.Add (KeyCode.S, new SitTutorial (tutor));
-		keyMapping.Add (KeyCode.RightArrow, new MoveCart (cart));
+        keyMapping.Add (KeyCode.D, new SittingRunTutorial(tutor));	
 		keyMapping.Add (KeyCode.E, new ContinueTutorial (tutor));
 	}
 
