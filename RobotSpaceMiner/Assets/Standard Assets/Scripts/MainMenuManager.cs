@@ -37,7 +37,7 @@ public class MainMenuManager : MonoBehaviour {
 
         if (GUI.Button(new Rect(
             scaledResolutionWidth * 0.5f - (GUI.skin.button.fixedWidth / 2),
-            nativeVerticalResolution * 0.3f,
+            nativeVerticalResolution * 0.25f,
             skin.button.fixedWidth,
             nativeVerticalResolution / 10),
             "START GAME"))
@@ -45,9 +45,20 @@ public class MainMenuManager : MonoBehaviour {
             StateManager.Instance.CurrentState = StateManager.State.PLAYING;
             Application.LoadLevel("MainLevel");
         }
+
+		if (GUI.Button(new Rect(
+			scaledResolutionWidth * 0.5f - (GUI.skin.button.fixedWidth / 2),
+			nativeVerticalResolution * 0.36f,
+			skin.button.fixedWidth,
+			nativeVerticalResolution / 10),
+		    "TUTORIAL"))
+		{
+			Application.LoadLevel("Tutorial");
+		}
+
         if (GUI.Button(new Rect(
             scaledResolutionWidth * 0.5f - (GUI.skin.button.fixedWidth / 2),
-            nativeVerticalResolution * 0.45f,
+            nativeVerticalResolution * 0.47f,
             skin.button.fixedWidth,
             nativeVerticalResolution / 10),
             "SETTINGS"))

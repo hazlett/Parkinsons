@@ -15,7 +15,7 @@ public class StandTutorial : IGestureAction
 	}
 	public void Trigger (object data)
 	{
-		tutor.SetState ((int)SitStandTutor.TutorStates.Sit);
+		tutor.StandTriggered ();
 	}
 }
 

@@ -13,7 +13,7 @@ public class SittingRunTutorial : IGestureAction
     }
     public void Trigger(object data)
     {
-        
+		tutor.SittingRunTriggered ();
     }
 }
 

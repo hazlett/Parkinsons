@@ -18,15 +18,6 @@ public class TutorGui : MonoBehaviour {
 		GUI.Box (new Rect (scaledResolutionWidth * 0.8f - (scaledResolutionWidth / 5f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 4,
 		                   nativeVerticalResolution / 10), "(This is you)");
 
-		if (false)
-		{
-			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10f), nativeVerticalResolution * 0.5f, scaledResolutionWidth / 4,
-			                  nativeVerticalResolution / 4), "RAISE RIGHT HAND\nTO CONTINUE"))
-			{
-				tutor.Continue();
-			}
-		}
-
 	}
 
 	void Update()
