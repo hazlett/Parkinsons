@@ -90,6 +90,8 @@
      <Compile Include="Assets\Standard Assets\Scripts\LevelSystem.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\MainMenuManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\MoveTrackLeft.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\MoveTrackRight.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PlayerSettings.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\RoadblockBehavior.cs" />
