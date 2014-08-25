@@ -92,6 +92,14 @@ public class GestureManagerScript : MonoBehaviour {
            {
                rv = new RunMovement(move);
            }
+           if (name == "swipeLeft")
+           {
+               rv = new MoveTrackLeft(move);
+           }
+           if (name == "swipeRight")
+           {
+               rv = new MoveTrackRight(move);
+           }
        }
        if (sectionName == "tutorial")
        {
