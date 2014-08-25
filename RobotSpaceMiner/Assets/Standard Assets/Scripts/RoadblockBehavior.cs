@@ -3,13 +3,16 @@ using System.Collections;
 
 public class RoadblockBehavior : MonoBehaviour
 {
-
+    ParticleSystem dodge, increase, decrease;
     private float explosionDistance = 2.5f;
     private GameObject cart;
     private RoadblockSpawner spawner;
 
     void Start()
     {
+        dodge = GameObject.Find("Dodge_Popup").GetComponent<ParticleSystem>();
+        increase = GameObject.Find("Increase_Score").GetComponent<ParticleSystem>();
+        decrease = GameObject.Find("Decrease_Score").GetComponent<ParticleSystem>();
 
         cart = GameObject.Find("Cart");
         spawner = GameObject.Find("Roadblock Spawner").GetComponent<RoadblockSpawner>();
@@ -19,7 +22,7 @@ public class RoadblockBehavior : MonoBehaviour
     void Update()
     {
 
-        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave)
+        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave || cart.transform.position.y > this.transform.position.y + 5)
         {
 
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosionNoScore"));
@@ -29,6 +32,13 @@ public class RoadblockBehavior : MonoBehaviour
 
         if (cart.transform.position.x > this.transform.position.x)
         {
+            dodge.Stop();
+            dodge.enableEmission = true;
+            dodge.Play();
+            increase.Stop();
+            increase.enableEmission = true;
+            increase.Play();
+            GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
             spawner.IncreaseDodgeCount();
             GameObject.Destroy(this.gameObject);
         }
@@ -44,9 +54,12 @@ public class RoadblockBehavior : MonoBehaviour
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosion"));
             explosion.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5, this.transform.position.z);
 
+            decrease.Stop();
+            decrease.enableEmission = true;
+            decrease.Play();
             // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-30000, 0, 0));
-            cart.GetComponent<GameStats>().AddScore(-200);
+            cart.GetComponent<GameStats>().AddScore(-100);
 
             GameObject.Destroy(this.gameObject);
         }
