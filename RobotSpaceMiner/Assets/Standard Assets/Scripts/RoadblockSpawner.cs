@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RoadblockSpawner : MonoBehaviour
 {
-    private int successfulDodgeCount, totalDodges, collisionCount;
+    private int totalDodges, collisionCount;
     private float startSpawn, previousSpawn, spawnDistance, spawnRate, baseRate;
     private BasicMovement cart;
 
@@ -11,7 +11,10 @@ public class RoadblockSpawner : MonoBehaviour
     {
         LEFT,
         CENTER,
-        RIGHT
+        RIGHT,
+        LEFTCENTER,
+        LEFTRIGHT,
+        CENTERRIGHT
     }
 
     private trackNumber currentTrack;
@@ -23,7 +26,7 @@ public class RoadblockSpawner : MonoBehaviour
         cart = GameObject.Find("Cart").GetComponent<BasicMovement>();
 
         StartSpawnRate();
-        previousSpawn = successfulDodgeCount = totalDodges = 0;
+        previousSpawn = totalDodges = 0;
         currentTrack = trackNumber.CENTER;
         startSpawn = 500;
     }
@@ -32,7 +35,7 @@ public class RoadblockSpawner : MonoBehaviour
     {
 
         CheckCart();
-        //DodgeCount();
+        DodgeCount();
     }
 
     void CheckCart()
@@ -52,27 +55,92 @@ public class RoadblockSpawner : MonoBehaviour
 
     void Spawn()
     {
+        currentTrack = (trackNumber)Random.Range(0, 6);
 
         // Instantiate obstacle (Fireball)
-        GameObject roadblock;
-        RoadblockBehavior roadblockBehavior;
+        GameObject roadblock, roadblock2;
 
         roadblock = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock"));
-        roadblockBehavior = roadblock.GetComponent<RoadblockBehavior>();
 
-        roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.transform.position.y - cart.transform.localScale.y, cart.transform.position.z);
-
-       /* switch (currentTrack)
+        switch (currentTrack)
         {
-            case trackNumber.LEFT: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.transform.position.y - cart.transform.localScale.y, cart.transform.position.z);
+            case trackNumber.LEFT:
+                Debug.Log("Cart track No:  " + (int)cart.currentTrack);
+            switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
+                        break;
+                }
                 break;
-            case trackNumber.CENTER: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.transform.position.y - cart.transform.localScale.y, cart.transform.position.z);
+            case trackNumber.CENTER: switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        break;
+                }
                 break;
-            case trackNumber.RIGHT: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.transform.position.y - cart.transform.localScale.y, cart.transform.position.z);
+            case trackNumber.RIGHT: switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                }
+                break;
+            case trackNumber.LEFTCENTER: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+            switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        break;
+                }
+                break;
+            case trackNumber.LEFTRIGHT: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+                switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                }
+                break;
+            case trackNumber.CENTERRIGHT: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+                switch ((int)cart.currentTrack)
+                {
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                        break;
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                        break;
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                        break;
+                }
                 break;
             default:
                 break;
-        }*/
+        }
 
     }
 
@@ -81,9 +149,9 @@ public class RoadblockSpawner : MonoBehaviour
         spawnDistance = 150;
         switch (PlayerSettings.Instance.Age)
         {
-            case 65: baseRate = spawnRate = 150;
+            case 65: baseRate = spawnRate = 50;
                 break;
-            case 70: baseRate = spawnRate = 200;
+            case 70: baseRate = spawnRate = 100;
                 break;
             case 75: baseRate = spawnRate = 250;
                 break;
@@ -93,16 +161,16 @@ public class RoadblockSpawner : MonoBehaviour
                 break;
             case 90: baseRate = spawnRate = 400;
                 break;
-            default: baseRate = spawnRate = 150;
+            default: baseRate = spawnRate = 50;
                 break;
         }
     }
 
-   /* void DodgeCount()
+    void DodgeCount()
     {
-        if (successfulDodgeCount - LevelSystem.Instance.LevelUpRequirement >= 0)
+        if (LevelSystem.Instance.SuccessfulHits - LevelSystem.Instance.LevelUpRequirement >= 0)
         {
-            successfulDodgeCount = 0;
+            LevelSystem.Instance.SuccessfulHits = 0;
             LevelSystem.Instance.LevelUpRequirement += 2;
             SetSpawnRate();
         }
@@ -110,17 +178,17 @@ public class RoadblockSpawner : MonoBehaviour
 
     void SetSpawnRate()
     {
-        spawnRate = baseRate - (LevelSystem.Instance.Level * 35);
-        if (spawnRate < 15)
+        spawnRate = baseRate - (LevelSystem.Instance.Level * 25);
+        if (spawnRate < 30)
         {
-            spawnRate = 15;
+            spawnRate = 30;
         }
         LevelSystem.Instance.LevelIncrease();
-    }*/
+    }
 
     public void IncreaseDodgeCount()
     {
-        successfulDodgeCount++;
+        LevelSystem.Instance.SuccessfulHits++;
         totalDodges++;
     }
 
