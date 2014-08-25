@@ -5,7 +5,7 @@ public class LevelSystem {
 	
     private static LevelSystem instance = new LevelSystem();
 
-    private ParticleSystem levelUp = GameObject.Find("Level_Up_Popup").GetComponent<ParticleSystem>();
+    private ParticleSystem levelUp;
     private int levelUpRequirement;
     public int LevelUpRequirement { get { return levelUpRequirement; } set { levelUpRequirement = value; } }
     private int level;
@@ -27,6 +27,7 @@ public class LevelSystem {
 
     public void LevelIncrease()
     {
+		levelUp = GameObject.Find ("Level_Up_Popup").GetComponent<ParticleSystem> ();
         levelUp.Stop();
         level++;
         levelUp.enableEmission = true;

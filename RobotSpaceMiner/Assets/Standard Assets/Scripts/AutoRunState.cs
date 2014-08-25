@@ -42,6 +42,8 @@ public class AutoRunState : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider)
 	{
+		if (!this.enabled)
+			return;
 		switch (collider.tag){
 		case "roadblock":
 			if (cart.currentTrack == BasicMovement.trackNumber.LEFT)
