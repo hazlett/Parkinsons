@@ -5,7 +5,7 @@ public class CubeGridCollider : MonoBehaviour {
 
     private Color transparent = new Color(1, 1, 1, 0);
     private Color indicatorOn = new Color(0, 0.59f, 1, 0.4f);
-    private int onCount;
+    internal int onCount;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +44,7 @@ public class CubeGridCollider : MonoBehaviour {
     }
 
     // And shoot an iceball out of the cube
-    void Deactivate()
+    internal void Deactivate()
     {
         onCount--;
         if (onCount >= 0)

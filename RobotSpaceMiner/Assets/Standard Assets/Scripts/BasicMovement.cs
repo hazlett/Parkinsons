@@ -8,26 +8,27 @@ public class BasicMovement : MonoBehaviour {
     public Camera mainCamera;
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
+	public AutoRunState autoRunState;
 
     private Vector3 moveNormal;
     private float offsetX = -4f, offsetY = 6, offsetZ = -18f, forceOnCart;
     private Camera chase, car;
 
-    private enum trackNumber
+    internal enum trackNumber
     {
         LEFT,
         CENTER,
         RIGHT
     }
 
-    private trackNumber currentTrack;
+    internal trackNumber currentTrack;
 
     void Start()
     {
         SetForceOnCart();
         downhill.force = new Vector3(100, 0, 0);
         downhill.enabled = false;
-
+		autoRunState.Initialize (this);
         currentTrack = trackNumber.CENTER;
 
         chase = GameObject.Find("Chase Camera").camera;

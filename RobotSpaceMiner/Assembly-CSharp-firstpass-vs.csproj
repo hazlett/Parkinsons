@@ -63,6 +63,8 @@
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_Demo.cs" />
      <Compile Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Demo\Assets\CFX3_Demo_Translate.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\AutoRun.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\AutoRunState.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CameraSwitch.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\CaveBehavior.cs" />

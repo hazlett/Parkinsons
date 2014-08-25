@@ -13,6 +13,7 @@ public class StateManager {
         MENU
     };
 
+	public bool AutoRun;
 	private bool fireHazards = false;
 	public bool FireHazards { get { return fireHazards; } set { fireHazards = value; } }
 

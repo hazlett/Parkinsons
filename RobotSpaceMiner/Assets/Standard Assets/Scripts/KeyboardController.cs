@@ -37,6 +37,7 @@ public class KeyboardController : MonoBehaviour {
 		keyMapping.Add (KeyCode.E, new ContinueTutorial (tutor));
 		keyMapping.Add (KeyCode.DownArrow, new MoveTrackLeft (cart));
 		keyMapping.Add (KeyCode.UpArrow, new MoveTrackRight (cart));
+		keyMapping.Add (KeyCode.R, new AutoRun (cart));
 	}
 
 	void Update () {
