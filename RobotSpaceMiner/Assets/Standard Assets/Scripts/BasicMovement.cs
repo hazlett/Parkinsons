@@ -11,7 +11,7 @@ public class BasicMovement : MonoBehaviour {
 	public AutoRunState autoRunState;
 
     private Vector3 moveNormal;
-    private float offsetX = -4f, offsetY = 6, offsetZ = -18f, forceOnCart;
+    private float offsetX = -6f, offsetY = 6, offsetZ = -18f, forceOnCart;
     private Camera chase, car;
 
     internal enum trackNumber

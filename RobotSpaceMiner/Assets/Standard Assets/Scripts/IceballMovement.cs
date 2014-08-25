@@ -3,10 +3,13 @@ using System.Collections;
 
 public class IceballMovement : MonoBehaviour {
 
+    private ParticleSystem niceShot, increase;
     private ObstacleSpawner spawner;
 	void Start () {
         this.rigidbody.velocity = new Vector3(60, 0, 0);
         spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
+        niceShot = GameObject.Find("Nice_Shot_Popup").GetComponent<ParticleSystem>();
+        increase = GameObject.Find("Increase_Score").GetComponent<ParticleSystem>();
 	}
 
     void OnTriggerEnter(Collider collider)
@@ -19,6 +22,12 @@ public class IceballMovement : MonoBehaviour {
             destroyedFireworks.transform.position = this.transform.position;
             spawner.IncreaseHitCount();
 
+            niceShot.Stop();
+            niceShot.enableEmission = true;
+            niceShot.Play();
+            increase.Stop();
+            increase.enableEmission = true;
+            increase.Play();
 			GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
 
             GameObject.Destroy(collider.gameObject);
