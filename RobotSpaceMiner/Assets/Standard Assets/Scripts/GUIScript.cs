@@ -9,18 +9,18 @@ public class GUIScript : MonoBehaviour {
 	public GameStats stats;
     public Texture2D logo;
     private GUIStyle logoStyle = new GUIStyle();
-
 	public GUIText guiText;
 	private string message = "Stand and sit to move the cart up the hill";
 
 	private Color color;
-	private float maxTime = 300.0f, timer, minutes, seconds, warningTime = 5.0f;
+	private float maxTime, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
 
     private float timerAlpha = 1.0f;
 
 	void Start()
 	{
+		maxTime = PlayerSettings.Instance.Timer;
 		timer = 0.0f;
 		StateManager.Instance.ResetTimer ();
 		StateManager.Instance.CurrentState = StateManager.State.PLAYING;
@@ -88,31 +88,32 @@ public class GUIScript : MonoBehaviour {
 
 	void OnGUI() 
 	{  
-
 		GUI.skin = Skin;
 
         // Scale the GUI to any resolution based on 1920 x 1080 base resolution
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1)); 
-
-		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
+		if (StateManager.Instance.IsPlaying)
 		{
-			GUILayout.Box ("STATS");
-			GUILayout.Box ("DISTANCE TRAVELED: " + stats.Distance);
-			GUILayout.Box ("SCORE: " + stats.Score);
-			GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.3f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
-			        "GAME\nOVER");
-			
-			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.5f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
-			                "PRESS TO\nPLAY AGAIN"))
+			if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
 			{
-				Application.LoadLevel("MainLevel");
+				GUILayout.Box ("STATS");
+				GUILayout.Box ("DISTANCE TRAVELED: " + stats.Distance);
+				GUILayout.Box ("SCORE: " + stats.Score);
+				GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.3f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+				        "GAME\nOVER");
+				
+				if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.5f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+				                "PRESS TO\nPLAY AGAIN"))
+				{
+					Application.LoadLevel("MainLevel");
+				}
+				if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.7f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
+				               "PRESS TO\nEXIT"))
+				{
+					Application.Quit();
+				}
+				return;
 			}
-			if (GUI.Button(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.7f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
-			               "PRESS TO\nEXIT"))
-			{
-				Application.Quit();
-			}
-			return;
 		}
 
         if (StateManager.Instance.Paused)

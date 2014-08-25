@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MainMenuManager : MonoBehaviour {
     public Texture2D backgroundImage;
+	public AudioClip buttonClick;
+	public SoundFXManager soundFXManager;
     public GUISkin skin;
     public GameObject settings;
 	private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
@@ -10,6 +12,7 @@ public class MainMenuManager : MonoBehaviour {
 
     void Start () {
         StateManager.Instance.CurrentState = StateManager.State.MENU;
+		StateManager.Instance.IsPlaying = false;
 	}
 	
 	void Update()
@@ -42,6 +45,8 @@ public class MainMenuManager : MonoBehaviour {
             nativeVerticalResolution / 10),
             "START GAME"))
         {
+			PlayFX();
+			StateManager.Instance.IsPlaying = true;
             StateManager.Instance.CurrentState = StateManager.State.PLAYING;
             Application.LoadLevel("MainLevel");
         }
@@ -53,6 +58,7 @@ public class MainMenuManager : MonoBehaviour {
 			nativeVerticalResolution / 10),
 		    "TUTORIAL"))
 		{
+			PlayFX();
 			Application.LoadLevel("Tutorial");
 		}
 
@@ -63,9 +69,15 @@ public class MainMenuManager : MonoBehaviour {
             nativeVerticalResolution / 10),
             "SETTINGS"))
         {
+			PlayFX();
             settings.SetActive(true);
             this.gameObject.SetActive(false);
         }
         
     }
+
+	private void PlayFX()
+ 	{
+		soundFXManager.PlayClip (buttonClick);
+	}
 }

@@ -4,7 +4,9 @@ using System;
 
 public class SettingsMenu : MonoBehaviour {
     public GUISkin skin;
+	public AudioClip buttonClick;
     public Texture2D background;
+	public SoundFXManager soundFXManager;
     private string message;
     private bool errorMessage;
     private string messageEnd;
@@ -144,7 +146,10 @@ public class SettingsMenu : MonoBehaviour {
             genderButton,
             nativeVerticalResolution / 10),
             "MALE"))
+		{
+			PlayFX();
 			male = true;
+		}
 
 		if (GUI.Toggle (new Rect(
             scaledResolutionWidth * 0.5f -
@@ -153,8 +158,9 @@ public class SettingsMenu : MonoBehaviour {
             nativeVerticalResolution * genderHeight,
             skin.toggle.fixedWidth,
             nativeVerticalResolution / 20),
-            !male, ""))
+            !male, "")) 
 			male = false;
+
 
 		if (GUI.Button (new Rect(
             scaledResolutionWidth * 0.5f -
@@ -164,7 +170,10 @@ public class SettingsMenu : MonoBehaviour {
             genderButton,
             nativeVerticalResolution / 10),
             "FEMALE"))
+		{
+			PlayFX();
 			male = false;
+		}
 
         //apply and exit
         GUI.skin.button.fixedWidth = applyAndExitButton;
@@ -175,6 +184,7 @@ public class SettingsMenu : MonoBehaviour {
             nativeVerticalResolution / 9.9f),
             "APPLY AND BACK"))
         {
+			PlayFX();
             Apply();
         }
         if (GUI.Button(new Rect(
@@ -184,6 +194,7 @@ public class SettingsMenu : MonoBehaviour {
             nativeVerticalResolution / 9.9f),
             "BACK WITHOUT APPLYING"))
         {
+			PlayFX();
             Back();
         }
 
@@ -263,4 +274,8 @@ public class SettingsMenu : MonoBehaviour {
             errorMessage = true;
 		}
     }
+	private void PlayFX()
+	{
+		soundFXManager.PlayClip (buttonClick);
+	}
 }

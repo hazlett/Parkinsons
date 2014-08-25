@@ -14,6 +14,10 @@ public class StateManager {
     };
 
 	public bool AutoRun;
+
+	private bool playing;
+	public bool IsPlaying { get { return playing; } set { playing = value; } }
+
 	private bool fireHazards = false;
 	public bool FireHazards { get { return fireHazards; } set { fireHazards = value; } }
 
@@ -34,6 +38,7 @@ public class StateManager {
     {
         paused = false;
         currentState = State.PLAYING;
+		playing = true;
     }
     public static StateManager Instance
     {
