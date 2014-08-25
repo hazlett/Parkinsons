@@ -70,6 +70,28 @@
                  compare="gt" value="90"/>
     </state>
   </gesture>
+  
+  <gesture name="swipeRight">
+    <state name="initial" order="0">
+      <criterion ref="primary-elbow-hand-angle-x" plane="xz"
+                 compare="gt" value="90"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="primary-elbow-hand-angle-x" plane="xz"
+                 compare="lt" value="45"/>
+    </state>
+  </gesture>
+  
+    <gesture name="swipeLeft">
+    <state name="initial" order="0">
+      <criterion ref="secondary-elbow-hand-angle-x" plane="xz"
+                 compare="lt" value="45"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="secondary-elbow-hand-angle-x" plane="xz"
+                 compare="gt" value="90"/>
+    </state>
+  </gesture>
 
 
 </gestures>

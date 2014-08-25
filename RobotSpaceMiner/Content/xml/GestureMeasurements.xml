@@ -18,7 +18,7 @@
     <vector type="-body-y-axis"/>
   </angle>
 
-  <angle name="elbow-hand-angle">
+  <angle name="secondary-elbow-hand-angle">
     <vector type="default">
       <joint skeletal-joint="elbow"
        side ="secondary" order ="0"/>
@@ -26,6 +26,26 @@
        side ="secondary" order ="1"/>
     </vector>
     <vector type="body-y-axis"/>
+  </angle>
+  
+  <angle name="primary-elbow-hand-angle-x">
+    <vector type="default">
+      <joint skeletal-joint="elbow"
+       side ="primary" order ="0"/>
+      <joint skeletal-joint="wrist"
+       side ="primary" order ="1"/>
+    </vector>
+    <vector type="body-x-axis"/>
+  </angle>
+  
+  <angle name="secondary-elbow-hand-angle-x">
+    <vector type="default">
+      <joint skeletal-joint="elbow"
+       side ="secondary" order ="0"/>
+      <joint skeletal-joint="wrist"
+       side ="secondary" order ="1"/>
+    </vector>
+    <vector type="body-x-axis"/>
   </angle>
 
   <angle name="elbow-angle">

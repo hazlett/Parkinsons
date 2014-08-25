@@ -21,6 +21,12 @@
       <binding gameAction="run">
         <gesture name="run" level="1"/>
       </binding>
+	  <binding gameAction="swipeLeft">
+		<gesture name="swipeLeft" level="1"/>
+		</binding>
+	  <binding gameAction="swipeRight">
+		<gesture name="swipeRight" level="1"/>
+		</binding>
     </section>
 
     <section name="tutorial">
