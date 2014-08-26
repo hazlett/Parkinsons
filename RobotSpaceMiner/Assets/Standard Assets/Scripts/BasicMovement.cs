@@ -65,7 +65,7 @@ public class BasicMovement : MonoBehaviour {
 
     public void Move() {
 
-        if (cartDistance.Distance() <= 400 || this.transform.rotation.z > 0.001f)
+        if (cartDistance.Distance() <= 400 || this.transform.rotation.x < -0.550001f)
         {
 			if (StateManager.Instance.TimerPause)
 			{
@@ -156,7 +156,7 @@ public class BasicMovement : MonoBehaviour {
     void DownhillCheck()
     {
 
-        if (cartDistance.Distance() >= 400 && this.transform.rotation.x < 270.001f)
+        if (cartDistance.Distance() >= 400 && this.transform.rotation.x > -0.550001f)
         {
             downhill.enabled = true;
 

@@ -23,8 +23,7 @@ public class RoadblockBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave || cart.transform.rotation.x > 270.001f)
+        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave || cart.transform.rotation.x < -0.550001f)
         {
 
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosionNoScore"));
@@ -66,6 +65,7 @@ public class RoadblockBehavior : MonoBehaviour
             decrease.Stop();
             decrease.enableEmission = true;
             decrease.Play();
+
             // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-30000, 0, 0));
             cart.GetComponent<GameStats>().AddScore(-100);

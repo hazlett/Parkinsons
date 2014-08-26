@@ -22,7 +22,7 @@ public class Roadblock2Behavior : MonoBehaviour
     void Update()
     {
 
-        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave || cart.transform.rotation.x > 270.001f)
+        if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER || StateManager.Instance.Cave || this.transform.rotation.x < -0.550001f)
         {
 
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosionNoScore"));
