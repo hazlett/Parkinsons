@@ -108,6 +108,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\SoundFXManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\WheelBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\XmlSettings.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\CarCamera.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Fog.cs" />
@@ -148,24 +149,10 @@
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="GestureLibrary">
-<<<<<<< HEAD
-<<<<<<< HEAD
  <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
  <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
-=======
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
- </Reference>
- <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
->>>>>>> origin/master
-=======
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
- </Reference>
- <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
->>>>>>> origin/master
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
