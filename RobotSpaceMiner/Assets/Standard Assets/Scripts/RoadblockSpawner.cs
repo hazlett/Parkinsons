@@ -57,15 +57,16 @@ public class RoadblockSpawner : MonoBehaviour
     {
         currentTrack = (trackNumber)Random.Range(0, 6);
 
-        // Instantiate obstacle (Fireball)
+        // Instantiate obstacle (Roadblock)
         GameObject roadblock, roadblock2;
+        Roadblock2Behavior roadblock2Behavior;
+        RoadblockBehavior roadblockBehavior;
 
         roadblock = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock"));
 
         switch (currentTrack)
         {
             case trackNumber.LEFT:
-                //Debug.Log("Cart track No:  " + (int)cart.currentTrack);
             switch ((int)cart.currentTrack)
                 {
                     case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
@@ -97,6 +98,10 @@ public class RoadblockSpawner : MonoBehaviour
                 }
                 break;
             case trackNumber.LEFTCENTER: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+                roadblockBehavior = roadblock.GetComponent<RoadblockBehavior>();
+                roadblockBehavior.roadblockPair = roadblock2;
+                roadblock2Behavior = roadblock2.GetComponent<Roadblock2Behavior>();
+                roadblock2Behavior.roadBlockPair = roadblock;
             switch ((int)cart.currentTrack)
                 {
                     case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
@@ -111,6 +116,10 @@ public class RoadblockSpawner : MonoBehaviour
                 }
                 break;
             case trackNumber.LEFTRIGHT: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+                roadblockBehavior = roadblock.GetComponent<RoadblockBehavior>();
+                roadblockBehavior.roadblockPair = roadblock2;
+                roadblock2Behavior = roadblock2.GetComponent<Roadblock2Behavior>();
+                roadblock2Behavior.roadBlockPair = roadblock;
                 switch ((int)cart.currentTrack)
                 {
                     case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
@@ -125,6 +134,10 @@ public class RoadblockSpawner : MonoBehaviour
                 }
                 break;
             case trackNumber.CENTERRIGHT: roadblock2 = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Roadblock2"));
+                roadblockBehavior = roadblock.GetComponent<RoadblockBehavior>();
+                roadblockBehavior.roadblockPair = roadblock2;
+                roadblock2Behavior = roadblock2.GetComponent<Roadblock2Behavior>();
+                roadblock2Behavior.roadBlockPair = roadblock;
                 switch ((int)cart.currentTrack)
                 {
                     case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
@@ -179,9 +192,9 @@ public class RoadblockSpawner : MonoBehaviour
     void SetSpawnRate()
     {
         spawnRate = baseRate - (LevelSystem.Instance.Level * 25);
-        if (spawnRate < 30)
+        if (spawnRate < 40)
         {
-            spawnRate = 30;
+            spawnRate = 40;
         }
         LevelSystem.Instance.LevelIncrease();
     }
