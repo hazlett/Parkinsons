@@ -53,7 +53,6 @@ public class RoadblockBehavior : MonoBehaviour
     {
         if (collider.tag == "cart")
         {
-            Debug.Log("Cart Collision!!");
             spawner.IncreaseCollisionCount();
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosion"));
             explosion.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5, this.transform.position.z);
