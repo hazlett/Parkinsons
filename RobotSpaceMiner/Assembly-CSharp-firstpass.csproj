@@ -108,6 +108,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\SoundFXManager.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\WheelBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\XmlSettings.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\CarCamera.cs" />
      <Compile Include="Assets\Standard Assets\Toon_Level_Kit\Examples\Script\Fog.cs" />
