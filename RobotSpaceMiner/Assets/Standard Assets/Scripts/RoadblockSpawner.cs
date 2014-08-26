@@ -65,7 +65,7 @@ public class RoadblockSpawner : MonoBehaviour
         switch (currentTrack)
         {
             case trackNumber.LEFT:
-                Debug.Log("Cart track No:  " + (int)cart.currentTrack);
+                //Debug.Log("Cart track No:  " + (int)cart.currentTrack);
             switch ((int)cart.currentTrack)
                 {
                     case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
