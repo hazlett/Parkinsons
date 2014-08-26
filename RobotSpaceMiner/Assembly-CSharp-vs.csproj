@@ -106,13 +106,20 @@
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
      <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+<<<<<<< HEAD
+ <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/Hazlett/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
+=======
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/GestureLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="KinectV2">
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/GestureScripts/KinectV2.dll</HintPath>
+>>>>>>> origin/master
  </Reference>
   </ItemGroup>
   <ItemGroup>

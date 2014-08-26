@@ -13,7 +13,7 @@ public class BasicMovement : MonoBehaviour {
 
     private Vector3 moveNormal;
     private float offsetX = -6f, offsetY = 6, offsetZ = -18f, forceOnCart;
-    private Camera chase, car;
+    private Camera car;
 
     internal enum trackNumber
     {
@@ -32,7 +32,6 @@ public class BasicMovement : MonoBehaviour {
 		autoRunState.Initialize (this);
         currentTrack = trackNumber.CENTER;
 
-        chase = GameObject.Find("Chase Camera").camera;
         car = GameObject.Find("First Person Camera").camera;
     }
 
@@ -171,7 +170,6 @@ public class BasicMovement : MonoBehaviour {
             }
 
             mainCamera.camera.enabled = false;
-            chase.enabled = false;
             car.enabled = true;
         }
         else

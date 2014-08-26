@@ -1,13 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\AutoRunState.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\Hazlett\Documents\GitHub\Parkinsons\RobotSpaceMiner\Assets\KinectScripts\InteractionManager.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\RoadblockBehavior.cs" Line="66" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\GUIScript.cs" Line="32" Column="15" />
-      <File FileName="Assets\Standard Assets\Scripts\RoadblockSpawner.cs" Line="201" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\KeyboardController.cs" Line="10" Column="29" />
+      <File FileName="Assets\Standard Assets\Scripts\RoadblockBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\GUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\RoadblockSpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\ObstacleSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\Roadblock2Behavior.cs" Line="57" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\AutoRunState.cs" Line="19" Column="17" />
+      <File FileName="Assets\Standard Assets\Scripts\Roadblock2Behavior.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Hazlett\Documents\GitHub\Parkinsons\RobotSpaceMiner\Assets\GesturesDemo\Scripts\GestureListener.cs" Line="4" Column="7" />
+      <File FileName="c:\Users\Hazlett\Documents\GitHub\Parkinsons\RobotSpaceMiner\Assets\Standard Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" Line="23" Column="83" />
+      <File FileName="c:\Users\Hazlett\Documents\GitHub\Parkinsons\RobotSpaceMiner\Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" Line="1025" Column="95" />
+      <File FileName="c:\Users\Hazlett\Documents\GitHub\Parkinsons\RobotSpaceMiner\Assets\KinectScripts\InteractionManager.cs" Line="457" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
