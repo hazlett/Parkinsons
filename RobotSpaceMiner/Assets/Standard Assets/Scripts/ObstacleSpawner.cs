@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ObstacleSpawner : MonoBehaviour {
 
-    private int successfulHitCount, totalHits, missCount;
+    private int totalHits, missCount;
     private float startSpawn, previousSpawn, spawnDistance, spawnRate, baseRate;
     private BasicMovement cart;
     private GameObject topLeftCube, topCenterCube, topRightCube, middleLeftCube, middleCenterCube, middleRightCube;
@@ -41,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour {
         middleRight = middleRightCube.GetComponent<CubeGridCollider>();
 
         StartSpawnRate();
-        previousSpawn = successfulHitCount = totalHits = 0;
+        previousSpawn = totalHits = 0;
         startSpawn = 1000;
 	}
 	
@@ -133,9 +133,9 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void HitCount()
     {
-        if(successfulHitCount - LevelSystem.Instance.LevelUpRequirement >= 0)
+        if(LevelSystem.Instance.SuccessfulHits - LevelSystem.Instance.LevelUpRequirement >= 0)
         {
-            successfulHitCount = 0;
+            LevelSystem.Instance.SuccessfulHits = 0;
             LevelSystem.Instance.LevelUpRequirement += 2;
             SetSpawnRate();
         }
@@ -143,7 +143,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void SetSpawnRate()
     {
-        spawnRate = baseRate - (LevelSystem.Instance.Level * 35);
+        spawnRate = baseRate - (LevelSystem.Instance.Level * 45);
         if (spawnRate < 15)
         {
             spawnRate = 15;
@@ -153,7 +153,7 @@ public class ObstacleSpawner : MonoBehaviour {
 
     public void IncreaseHitCount()
     {
-        successfulHitCount++;
+        LevelSystem.Instance.SuccessfulHits++;
         totalHits++;
     }
 

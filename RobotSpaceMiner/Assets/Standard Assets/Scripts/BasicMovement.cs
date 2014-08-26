@@ -9,6 +9,7 @@ public class BasicMovement : MonoBehaviour {
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
 	public AutoRunState autoRunState;
+    public float minY;
 
     private Vector3 moveNormal;
     private float offsetX = -6f, offsetY = 6, offsetZ = -18f, forceOnCart;
@@ -40,6 +41,11 @@ public class BasicMovement : MonoBehaviour {
         DownhillCheck();
 
         CameraFollow();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            this.rigidbody.AddForce(new Vector3(0, 11000, 0));
+        }
 
     }
 
@@ -150,8 +156,12 @@ public class BasicMovement : MonoBehaviour {
 
             if (!StateManager.Instance.Cave)
             {
-                StateManager.Instance.Roadblocks = true;
-                StateManager.Instance.FireHazards = false;
+                if (!StateManager.Instance.Roadblocks)
+                {
+                    StateManager.Instance.Roadblocks = true;
+                    minY = this.transform.position.y;
+                    StateManager.Instance.FireHazards = false;
+                }
             }
             else
             {

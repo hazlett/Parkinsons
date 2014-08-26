@@ -8,6 +8,8 @@ public class LevelSystem {
     private ParticleSystem levelUp;
     private int levelUpRequirement;
     public int LevelUpRequirement { get { return levelUpRequirement; } set { levelUpRequirement = value; } }
+    private int successfulHits;
+    public int SuccessfulHits { get { return successfulHits; } set { successfulHits = value; } }
     private int level;
     public int Level { get { return level; } }
 

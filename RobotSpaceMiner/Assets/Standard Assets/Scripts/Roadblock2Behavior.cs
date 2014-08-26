@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RoadblockBehavior : MonoBehaviour
+public class Roadblock2Behavior : MonoBehaviour
 {
-    ParticleSystem dodge, increase, decrease;
+    ParticleSystem decrease;
     private float explosionDistance = 2.5f;
     private GameObject cart;
     private RoadblockSpawner spawner;
 
     void Start()
     {
-        dodge = GameObject.Find("Dodge_Popup").GetComponent<ParticleSystem>();
-        increase = GameObject.Find("Increase_Score").GetComponent<ParticleSystem>();
         decrease = GameObject.Find("Decrease_Score").GetComponent<ParticleSystem>();
 
         cart = GameObject.Find("Cart");
@@ -32,14 +30,6 @@ public class RoadblockBehavior : MonoBehaviour
 
         if (cart.transform.position.x > this.transform.position.x)
         {
-            increase.Stop();
-            increase.enableEmission = true;
-            increase.Play();
-            dodge.Stop();
-            dodge.enableEmission = true;
-            dodge.Play();
-            GameObject.Find("Cart").GetComponent<GameStats>().AddScore(150);
-            spawner.IncreaseDodgeCount();
             GameObject.Destroy(this.gameObject);
         }
 
@@ -57,6 +47,7 @@ public class RoadblockBehavior : MonoBehaviour
             decrease.Stop();
             decrease.enableEmission = true;
             decrease.Play();
+
             // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-30000, 0, 0));
             cart.GetComponent<GameStats>().AddScore(-100);
