@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Roadblock2Behavior : MonoBehaviour
 {
-    ParticleSystem decrease;
+    public GameObject roadBlockPair;
+
+    private ParticleSystem decrease;
     private float explosionDistance = 2.5f;
     private GameObject cart;
     private RoadblockSpawner spawner;
@@ -44,6 +46,9 @@ public class Roadblock2Behavior : MonoBehaviour
             GameObject explosion = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosion"));
             explosion.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 5, this.transform.position.z);
 
+            GameObject explosionPair = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/TNTExplosion"));
+            explosionPair.transform.position = new Vector3(roadBlockPair.transform.position.x, roadBlockPair.transform.position.y + 5, roadBlockPair.transform.position.z);
+
             decrease.Stop();
             decrease.enableEmission = true;
             decrease.Play();
@@ -52,6 +57,7 @@ public class Roadblock2Behavior : MonoBehaviour
             cart.rigidbody.AddForce(new Vector3(-30000, 0, 0));
             cart.GetComponent<GameStats>().AddScore(-100);
 
+            GameObject.Destroy(roadBlockPair.gameObject);
             GameObject.Destroy(this.gameObject);
         }
     }
