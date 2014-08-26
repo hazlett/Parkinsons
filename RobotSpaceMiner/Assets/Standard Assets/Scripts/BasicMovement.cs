@@ -9,6 +9,7 @@ public class BasicMovement : MonoBehaviour {
     public DistanceTraveled cartDistance;
     public ConstantForce downhill;
 	public AutoRunState autoRunState;
+    public WheelCollider wheel;
     public float minY;
 
     private Vector3 moveNormal;
@@ -41,9 +42,14 @@ public class BasicMovement : MonoBehaviour {
 
         CameraFollow();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        SetGround();
+
+        if (wheel.isGrounded)
         {
-            this.rigidbody.AddForce(new Vector3(0, 11000, 0));
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                this.rigidbody.AddForce(new Vector3(0, 11000, 0));
+            }
         }
 
     }
@@ -149,7 +155,8 @@ public class BasicMovement : MonoBehaviour {
 
     void DownhillCheck()
     {
-        if (cartDistance.Distance() >= 400 && this.transform.rotation.z < 0.001f)
+
+        if (cartDistance.Distance() >= 400 && this.transform.rotation.x < 270.001f)
         {
             downhill.enabled = true;
 
@@ -158,7 +165,6 @@ public class BasicMovement : MonoBehaviour {
                 if (!StateManager.Instance.Roadblocks)
                 {
                     StateManager.Instance.Roadblocks = true;
-                    minY = this.transform.position.y;
                     StateManager.Instance.FireHazards = false;
                 }
             }
@@ -191,6 +197,15 @@ public class BasicMovement : MonoBehaviour {
         else if (currentTrack == trackNumber.LEFT)
         {
             HopRight();
+        }
+    }
+
+    void SetGround()
+    {
+
+        if (wheel.isGrounded)
+        {
+            minY = this.transform.position.y;
         }
     }
 }

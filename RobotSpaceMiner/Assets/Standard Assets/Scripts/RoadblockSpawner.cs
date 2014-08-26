@@ -4,7 +4,7 @@ using System.Collections;
 public class RoadblockSpawner : MonoBehaviour
 {
     private int totalDodges, collisionCount;
-    private float startSpawn, previousSpawn, spawnDistance, spawnRate, baseRate;
+    private float startSpawn, previousSpawn, spawnDistance, spawnRate, baseRate, offsetY;
     private BasicMovement cart;
 
     private enum trackNumber
@@ -29,6 +29,7 @@ public class RoadblockSpawner : MonoBehaviour
         previousSpawn = totalDodges = 0;
         currentTrack = trackNumber.CENTER;
         startSpawn = 500;
+        offsetY = 1.5f;
     }
 
     void Update()
@@ -69,31 +70,31 @@ public class RoadblockSpawner : MonoBehaviour
             case trackNumber.LEFT:
             switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 20);
                         break;
                 }
                 break;
             case trackNumber.CENTER: switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
                         break;
                 }
                 break;
             case trackNumber.RIGHT: switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 20);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
                 }
                 break;
@@ -104,14 +105,14 @@ public class RoadblockSpawner : MonoBehaviour
                 roadblock2Behavior.roadBlockPair = roadblock;
             switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 20);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
                         break;
                 }
                 break;
@@ -122,14 +123,14 @@ public class RoadblockSpawner : MonoBehaviour
                 roadblock2Behavior.roadBlockPair = roadblock;
                 switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 20);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 20);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 20);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
                 }
                 break;
@@ -140,14 +141,14 @@ public class RoadblockSpawner : MonoBehaviour
                 roadblock2Behavior.roadBlockPair = roadblock;
                 switch ((int)cart.currentTrack)
                 {
-                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 20);
+                    case 2: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 20);
                         break;
-                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z - 10);
+                    case 1: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z - 10);
                         break;
-                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z + 10);
-                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - cart.transform.localScale.y, cart.transform.position.z);
+                    case 0: roadblock.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z + 10);
+                        roadblock2.transform.position = new Vector3(cart.transform.position.x + spawnDistance, cart.minY - offsetY, cart.transform.position.z);
                         break;
                 }
                 break;
