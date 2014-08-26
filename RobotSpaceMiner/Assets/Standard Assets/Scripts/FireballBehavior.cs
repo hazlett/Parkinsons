@@ -13,6 +13,8 @@ public class FireballBehavior : MonoBehaviour {
 	void Start () {
 
         cart = GameObject.Find("Cart");
+
+
         setCube();
         spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
 	}
