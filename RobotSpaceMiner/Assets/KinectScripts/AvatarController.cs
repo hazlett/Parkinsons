@@ -409,7 +409,7 @@ public class AvatarController : MonoBehaviour
 		if (offsetNode != null)
 		{
 			Vector3 totalRotation = newRotation.eulerAngles + offsetNode.transform.rotation.eulerAngles;
-			newRotation = Quaternion.Euler(totalRotation);
+            newRotation = Quaternion.Euler(totalRotation);
 		}
 		
 		return newRotation;
