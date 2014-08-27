@@ -3,6 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
+using System;
 
 public class SettingsSerializer {
 
@@ -31,10 +32,18 @@ public class SettingsSerializer {
     }
     public XmlSettings ReadSettings()
     {
-        using (var file = File.Open(logPath, FileMode.Open, FileAccess.Read))
-        {
-            XmlSerializer xml = new XmlSerializer(typeof(XmlSettings));
-            return (XmlSettings)xml.Deserialize(file);
-        }
+		try {
+	        using (var file = File.Open(logPath, FileMode.Open))
+	        {
+	            XmlSerializer xml = new XmlSerializer(typeof(XmlSettings));
+	            return (XmlSettings)xml.Deserialize(file);
+      	  	}
+		}
+		catch (Exception e)
+		{
+			XmlSettings newSettings = new XmlSettings(70, 300, 0);
+			WriteSettings(newSettings);
+			return newSettings;
+		}
     }
 }
