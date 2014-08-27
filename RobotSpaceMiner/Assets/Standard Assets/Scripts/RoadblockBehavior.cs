@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class RoadblockBehavior : MonoBehaviour
 {
@@ -69,8 +70,13 @@ public class RoadblockBehavior : MonoBehaviour
             // Force of the explosion
             cart.rigidbody.AddForce(new Vector3(-30000, 0, 0));
             cart.GetComponent<GameStats>().AddScore(-100);
-
+			try {
             GameObject.Destroy(roadblockPair.gameObject);
+			}
+			catch(Exception)
+			{
+
+				}
             GameObject.Destroy(this.gameObject);
         }
     }
