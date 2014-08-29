@@ -11,7 +11,7 @@ public class GUIScript : MonoBehaviour {
     private GUIStyle logoStyle = new GUIStyle();
 	public GUIText guiText;
 	private string message = "Stand and sit to move the cart up the hill";
-
+    public bool timeOn;
 	private Color color;
 	private float maxTime, timer, minutes, seconds, warningTime = 5.0f;
     private float nativeVerticalResolution = 1080.0f, scaledResolutionWidth, updateGUI = 0.5f;
@@ -116,8 +116,11 @@ public class GUIScript : MonoBehaviour {
         }
         color.a = timerAlpha;
         GUI.color = color;
-        GUI.Label(new Rect (scaledResolutionWidth / 2 - (scaledResolutionWidth / 10f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 5,
-                            nativeVerticalResolution / 10), string.Format("{0:00}:{1:00}", minutes, seconds));
+        if (timeOn)
+        {
+            GUI.Label(new Rect(scaledResolutionWidth / 2 - (scaledResolutionWidth / 10f), nativeVerticalResolution / 2 - (nativeVerticalResolution / 2f) + 20, scaledResolutionWidth / 5,
+                                nativeVerticalResolution / 10), string.Format("{0:00}:{1:00}", minutes, seconds));
+        }
 		ShowGestures ();
         if (GUI.Button(new Rect (scaledResolutionWidth - (scaledResolutionWidth / 10) - 20, 20, scaledResolutionWidth / 10, nativeVerticalResolution / 20), 
                                     "TOGGLE PAUSE"))
