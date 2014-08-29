@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36084BD9-BD27-C403-D26F-2E2FC66BED17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="GestureLibrary">
+      <HintPath>Assets\Standard Assets\Scripts\GestureLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="KinectV2">
+      <HintPath>Assets\Standard Assets\Scripts\KinectV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="UnityVS.RobotSpaceMiner.CSharp.Plugins.csproj">
+      <Project>{D8273791-C602-C1B2-F982-2E39C44750E6}</Project>
+      <Name>UnityVS.RobotSpaceMiner.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Extensions.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\MeshPiece.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabManager.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabPool.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\PrefabRule.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\RenderQueue.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\Settings.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainDisplayer.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainManager.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPiece.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainPool.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TerrainRule.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\TransformHelpers.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Core\Scripts\VertexGenerator.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\ChaseCamera.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\CoinPickup.cs" />
+    <Compile Include="Assets\Endless2DTerrain\Demos\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\GesturesDemo\Scripts\GestureListener.cs" />
+    <Compile Include="Assets\GesturesDemo\Scripts\PresentationScript.cs" />
+    <Compile Include="Assets\InteractionDemo\Scripts\GrabDropScript.cs" />
+    <Compile Include="Assets\InteractionDemo\Scripts\GuiWindowScript.cs" />
+    <Compile Include="Assets\KinectScripts\AvatarController.cs" />
+    <Compile Include="Assets\KinectScripts\Cubeman\CubemanController.cs" />
+    <Compile Include="Assets\KinectScripts\Extras\LoadMainLevel.cs" />
+    <Compile Include="Assets\KinectScripts\Extras\MinecartGestureListener.cs" />
+    <Compile Include="Assets\KinectScripts\Extras\MouseControl.cs" />
+    <Compile Include="Assets\KinectScripts\Extras\SetSceneAvatars.cs" />
+    <Compile Include="Assets\KinectScripts\Extras\SimpleGestureListener.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\BoneOrientationsConstraint.cs" />
+    <Compile Include="Assets\KinectScripts\Filters\JointPositionsFilter.cs" />
+    <Compile Include="Assets\KinectScripts\InteractionManager.cs" />
+    <Compile Include="Assets\KinectScripts\KinectGestures.cs" />
+    <Compile Include="Assets\KinectScripts\KinectInterop.cs" />
+    <Compile Include="Assets\KinectScripts\KinectManager.cs" />
+    <Compile Include="Assets\KinectScripts\KinectServer.cs" />
+    <Compile Include="Assets\TutorGui.cs" />
+    <Compile Include="Assets\Tutorial\TutorialManager.cs" />
+    <None Include="Assets\Endless2DTerrain\Demos\Resources\Shaders\VertexColorUnlit.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\!JMO Assets Readme.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Readme.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX Releases Notes.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Readme.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\CartoonFX2 Releases Notes.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_WaterWiggle.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Tint.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\CartoonFX3 Readme.txt" />
+    <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Invert.shader" />
+    <None Include="Assets\Standard Assets\JMO Assets\JMO Assets 3\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\Documentation\Readme.txt" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Materials\GlassTypeA.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Glass.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Leave.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
+    <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>

@@ -28,24 +28,13 @@ public class GUIScript : MonoBehaviour {
 
 	void Update()
 	{
+        message = StateManager.Instance.GetMessage();
 		if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER) {
-			message = "";
 			return;
 		}
-		if (StateManager.Instance.AutoRun) {
-			message = "AUTO RUN ENABLED";
-		}
-		else if (StateManager.Instance.FireHazards) {
-			message = "Push blue squares with your hand as they appear";
-		}
-		else if (StateManager.Instance.Roadblocks) {
-			message = "Swipe left and right to avoid obstacles";
-		}
-		else {
-			message = "Stand and sit to move the cart up the hill";
-		}
 
-		guiText.text = message;
+        if (guiText != null)
+		    guiText.text = message;
         if (StateManager.Instance.Paused)
         {
             Time.timeScale = 0;

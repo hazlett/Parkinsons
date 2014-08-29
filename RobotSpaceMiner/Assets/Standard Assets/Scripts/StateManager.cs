@@ -47,6 +47,31 @@ public class StateManager {
             return instance;
         }
     }
+    public string GetMessage()
+    {
+        string message = "";
+        if (CurrentState == State.GAMEOVER)
+        {
+            message = "";
+        }
+        if (AutoRun)
+        {
+            message = "AUTO RUN ENABLED";
+        }
+        else if (FireHazards)
+        {
+            message = "Push blue squares with your hand as they appear";
+        }
+        else if (Roadblocks)
+        {
+            message = "Swipe left and right to avoid obstacles";
+        }
+        else
+        {
+            message = "Follow the lever\nStand and sit to move up the hill";
+        }
+        return message;
+    }
 	public void StartTimer()
 	{
 		timerPause = false;
