@@ -34,7 +34,6 @@ public class SitStandTutor : MonoBehaviour {
 		rightAnkleConstant = rightAnkle;
 		leftAnkleConstant = leftAnkle;
 		SnapToStand ();
-        state = (int)TutorStates.TransitionToSittingRun;
 	}
 
 	// Update is called once per frame
