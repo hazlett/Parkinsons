@@ -5,7 +5,6 @@ using System;
 public class SettingsMenu : MonoBehaviour {
     public GUISkin skin;
 	public AudioClip buttonClick;
-    public Texture2D background;
 	public SoundFXManager soundFXManager;
     private string message;
     private bool errorMessage;
@@ -57,7 +56,6 @@ public class SettingsMenu : MonoBehaviour {
     {
         GUI.skin = skin;
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1));
-        GUI.DrawTexture(new Rect(0, 0, scaledResolutionWidth, nativeVerticalResolution), background);
  
 		//age        
         GUI.Label(new Rect(
@@ -197,13 +195,13 @@ public class SettingsMenu : MonoBehaviour {
 			PlayFX();
             Back();
         }
-
+        GUI.skin.box.fixedWidth = scaledResolutionWidth / 4;
         if (errorMessage)
         {
             GUI.Box(new Rect(
-                scaledResolutionWidth * 0.5f - (skin.box.fixedWidth / 2),
+                scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 8),
                 nativeVerticalResolution * 0.21f - (nativeVerticalResolution / 5),
-                scaledResolutionWidth / 5,
+                scaledResolutionWidth / 4,
                 nativeVerticalResolution / 5),
                 message + messageEnd);
         }
@@ -276,6 +274,8 @@ public class SettingsMenu : MonoBehaviour {
     }
 	private void PlayFX()
 	{
-		soundFXManager.PlayClip (buttonClick);
+        try { soundFXManager.PlayClip(buttonClick); }
+        catch (Exception) { }
+		
 	}
 }
