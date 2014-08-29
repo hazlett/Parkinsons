@@ -104,23 +104,31 @@ public class BasicMovement : MonoBehaviour {
 
     void SetForceOnCart()
     {
-        switch (PlayerSettings.Instance.Age)
+        if (PlayerSettings.Instance.Age >= 65 && PlayerSettings.Instance.Age < 70)
         {
-            case 65: forceOnCart = 10000;
-                break;
-            case 70: forceOnCart = 12500;
-                break;
-            case 75: forceOnCart = 15000;
-                break;
-            case 80: forceOnCart = 17500;
-                break;
-            case 85: forceOnCart = 20000;
-                break;
-            case 90: forceOnCart = 22500;
-                break;
-            default: forceOnCart = 7500;
-                break;
+            forceOnCart = 10000;
         }
+        else if (PlayerSettings.Instance.Age >= 70 && PlayerSettings.Instance.Age < 75)
+        {
+            forceOnCart = 11000;
+        }
+        else if (PlayerSettings.Instance.Age >= 75 && PlayerSettings.Instance.Age < 80)
+        {
+            forceOnCart = 12000;
+        }
+        else if (PlayerSettings.Instance.Age >= 80 && PlayerSettings.Instance.Age < 85)
+        {
+            forceOnCart = 13000;
+        }
+        else if (PlayerSettings.Instance.Age >= 85 && PlayerSettings.Instance.Age < 90)
+        {
+            forceOnCart = 14000;
+        }
+        else
+        {
+            forceOnCart = 10000;
+        }
+        
     }
 
     void HopLeft()

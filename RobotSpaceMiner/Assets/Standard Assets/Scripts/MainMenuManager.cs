@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MainMenuManager : MonoBehaviour {
-    public Texture2D backgroundImage;
+
 	public AudioClip buttonClick;
 	public SoundFXManager soundFXManager;
     public GUISkin skin;
@@ -27,7 +27,6 @@ public class MainMenuManager : MonoBehaviour {
         GUI.skin = skin;
         
         GUI.matrix = Matrix4x4.TRS(new Vector3(0, 0, 0), Quaternion.identity, new Vector3(Screen.height / nativeVerticalResolution, Screen.height / nativeVerticalResolution, 1));
-        GUI.DrawTexture(new Rect(0, 0, scaledResolutionWidth, nativeVerticalResolution), backgroundImage);
 
         GUI.Label(new Rect(
             scaledResolutionWidth * 0.5f - (GUI.skin.label.fixedWidth / 2),

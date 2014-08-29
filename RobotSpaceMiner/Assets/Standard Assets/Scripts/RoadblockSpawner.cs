@@ -161,22 +161,33 @@ public class RoadblockSpawner : MonoBehaviour
     void StartSpawnRate()
     {
         spawnDistance = 150;
-        switch (PlayerSettings.Instance.Age)
+        if (PlayerSettings.Instance.Age >= 60 && PlayerSettings.Instance.Age < 70)
         {
-            case 65: baseRate = spawnRate = 50;
-                break;
-            case 70: baseRate = spawnRate = 100;
-                break;
-            case 75: baseRate = spawnRate = 250;
-                break;
-            case 80: baseRate = spawnRate = 300;
-                break;
-            case 85: baseRate = spawnRate = 350;
-                break;
-            case 90: baseRate = spawnRate = 400;
-                break;
-            default: baseRate = spawnRate = 50;
-                break;
+            baseRate = spawnRate = 150;
+        }
+        else if (PlayerSettings.Instance.Age >= 70 && PlayerSettings.Instance.Age < 75)
+        {
+            baseRate = spawnRate = 200;
+        }
+        else if (PlayerSettings.Instance.Age >= 75 && PlayerSettings.Instance.Age < 80)
+        {
+            baseRate = spawnRate = 250;
+        }
+        else if (PlayerSettings.Instance.Age >= 80 && PlayerSettings.Instance.Age < 85)
+        {
+            baseRate = spawnRate = 300;
+        }
+        else if (PlayerSettings.Instance.Age >= 85 && PlayerSettings.Instance.Age < 90)
+        {
+            baseRate = spawnRate = 350;
+        }
+        else if (PlayerSettings.Instance.Age >= 90)
+        {
+            baseRate = spawnRate = 400;
+        }
+        else
+        {
+            baseRate = spawnRate = 150;
         }
     }
 
