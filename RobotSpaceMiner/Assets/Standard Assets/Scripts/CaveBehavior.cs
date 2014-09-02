@@ -3,13 +3,8 @@ using System.Collections;
 
 public class CaveBehavior : MonoBehaviour {
 
-    //public GameObject cart;
-
-   // private float roadBlockDistance;
-
     void Start()
     {
-        //roadBlockDistance = 50;
     }
 
     void OnTriggerEnter(Collider collider)
