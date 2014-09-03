@@ -13,7 +13,7 @@ public class GestureManagerScript : MonoBehaviour {
 	public SitStandTutor tutor;
     public KinectGameData currentKinectGameData;
     public string sectionName;
-
+    private string message1 = "OK", message2 = "OK", message3 = "OK", errorMessage = "OK";
     private KinectSensor GameKinectSensor;
 
 	// Use this for initialization
@@ -27,6 +27,7 @@ public class GestureManagerScript : MonoBehaviour {
         }
         catch (Exception e)
         {
+            errorMessage = e.Message;
             Debug.LogError(e.Message);
         }
 
@@ -39,6 +40,7 @@ public class GestureManagerScript : MonoBehaviour {
         }
         catch (Exception e)
         {
+            errorMessage = e.Message;
             Debug.LogError(e.Message);
         }
 
@@ -121,7 +123,6 @@ public class GestureManagerScript : MonoBehaviour {
     }
 
 	void FixedUpdate () {
-
         GameKinectSensor.Update();
         gestureManager.HandleNewSkeleton(currentKinectGameData, (double)Time.fixedTime * 1000);
 	}

@@ -79,14 +79,14 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
- <Reference Include="JMOAssets">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
- </Reference>
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/KinectV2.dll</HintPath>
+ </Reference>
+ <Reference Include="JMOAssets">
+ <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
  <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
@@ -100,6 +100,12 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{97869B72-48D4-C3F2-0334-3F29637A7144}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-vs.csproj">
+      <Project>{BC770EDB-7473-32D3-A564-D1C41443C14B}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -110,13 +110,15 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{97869B72-48D4-C3F2-0334-3F29637A7144}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{055D6661-8C5A-BEDD-AE7F-80E727DABCAB}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>

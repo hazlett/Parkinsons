@@ -51,6 +51,10 @@ public class GUIScript : MonoBehaviour {
 
             timer += Time.deltaTime;
         }
+        if (!timeOn)
+        {
+            timer = 0;
+        }
 
         if (timer > maxTime)
         {
