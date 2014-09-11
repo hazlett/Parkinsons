@@ -55,14 +55,14 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
     </Reference>
-    <Reference Include="JMOAssets">
-      <HintPath>Assets\Standard Assets\JMO Assets\Editor\JMOAssets.dll</HintPath>
-    </Reference>
     <Reference Include="GestureLibrary">
-      <HintPath>Assets\Standard Assets\Scripts\GestureLibrary.dll</HintPath>
+      <HintPath>Assets\Resources\GestureLibrary.dll</HintPath>
     </Reference>
     <Reference Include="KinectV2">
-      <HintPath>Assets\Standard Assets\Scripts\KinectV2.dll</HintPath>
+      <HintPath>Assets\Resources\KinectV2.dll</HintPath>
+    </Reference>
+    <Reference Include="JMOAssets">
+      <HintPath>Assets\Standard Assets\JMO Assets\Editor\JMOAssets.dll</HintPath>
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Assets\UnityVS\Editor\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>

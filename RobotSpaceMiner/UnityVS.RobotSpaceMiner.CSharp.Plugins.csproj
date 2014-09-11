@@ -50,10 +50,10 @@
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="GestureLibrary">
-      <HintPath>Assets\Standard Assets\Scripts\GestureLibrary.dll</HintPath>
+      <HintPath>Assets\Resources\GestureLibrary.dll</HintPath>
     </Reference>
     <Reference Include="KinectV2">
-      <HintPath>Assets\Standard Assets\Scripts\KinectV2.dll</HintPath>
+      <HintPath>Assets\Resources\KinectV2.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +102,7 @@
     <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\KeyboardController.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\LevelSystem.cs" />
+    <Compile Include="Assets\Standard Assets\Scripts\LogoGUI.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\MoveCart.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\MoveTrackLeft.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\Standard Assets\Scripts\SitTutorial.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\SittingRunTutorial.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\SoundFXManager.cs" />
+    <Compile Include="Assets\Standard Assets\Scripts\SplashScreen.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\StandTutorial.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\StateManager.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\WheelBehavior.cs" />
@@ -162,8 +164,6 @@
     <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Rim2.shader" />
     <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation.shader" />
     <None Include="Assets\Standard Assets\Toon_Level_Kit\TLK-Medias\Shaders\Vegetation-Lightmap.shader" />
-    <None Include="Assets\Standard Assets\Scripts\GestureLibrary.dll" />
-    <None Include="Assets\Standard Assets\Scripts\KinectV2.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
