@@ -43,35 +43,35 @@ public class HandbarRotation : MonoBehaviour {
     {
         if (PlayerSettings.Instance.Age >= 60 && PlayerSettings.Instance.Age < 65)
         {
-            scale = 100.0f;
+            scale = 53.0f;
         }
         else if (PlayerSettings.Instance.Age >= 65 && PlayerSettings.Instance.Age < 70)
         {
-            scale = 92.0f;
+            scale = 50.0f;
         }
         else if (PlayerSettings.Instance.Age >= 70 && PlayerSettings.Instance.Age < 75)
         {
-            scale = 87.0f;
+            scale = 48.0f;
         }
         else if (PlayerSettings.Instance.Age >= 75 && PlayerSettings.Instance.Age < 80)
         {
-            scale = 82.0f;
+            scale = 45.0f;
         }
         else if (PlayerSettings.Instance.Age >= 80 && PlayerSettings.Instance.Age < 85)
         {
-            scale = 78.0f;
+            scale = 43.0f;
         }
         else if (PlayerSettings.Instance.Age >= 85 && PlayerSettings.Instance.Age < 90)
         {
-            scale = 75.0f;
+            scale = 40.0f;
         }
         else if (PlayerSettings.Instance.Age >= 90)
         {
-            scale = 72.0f;
+            scale = 37.0f;
         }
         else
         {
-            scale = 110.0f;
+            scale = 65.0f;
         }
     }
 }

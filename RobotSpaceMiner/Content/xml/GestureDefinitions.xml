@@ -26,7 +26,7 @@
     </state>
     <state name="final" order="1">
       <criterion ref="hip-angle" plane="yz"
-      compare="lt" value="10.0"/>
+      compare="lt" value="20.0"/>
     </state>
   </gesture>
 
@@ -34,7 +34,7 @@
   <gesture name="sit">
     <state name="initial" order="0">
       <criterion ref="hip-angle" plane="yz"
-      compare="lt" value="10.0"/>
+      compare="lt" value="20.0"/>
     </state>
     <state name="final" order="2">
       <criterion ref="hip-angle" plane="yz"

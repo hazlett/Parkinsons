@@ -87,7 +87,6 @@
      <Compile Include="Assets\Standard Assets\Scripts\GameStats.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\GestureManagerScript.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\HandbarRotation.cs" />
-     <Compile Include="Assets\Standard Assets\Scripts\HandbarRotationBehavior.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\KeyboardController.cs" />
@@ -156,10 +155,10 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="GestureLibrary">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

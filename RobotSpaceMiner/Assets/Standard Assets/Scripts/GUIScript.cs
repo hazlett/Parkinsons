@@ -9,8 +9,7 @@ public class GUIScript : MonoBehaviour {
 	public GameStats stats;
     public Texture2D logo;
     private GUIStyle logoStyle = new GUIStyle();
-	public GUIText guiText;
-	private string message = "Stand and sit to move the cart up the hill";
+	private string message = "Please stand and raise your right hand to begin";
     public bool timeOn;
 	private Color color;
 	private float maxTime, timer, minutes, seconds, warningTime = 5.0f;
@@ -23,7 +22,7 @@ public class GUIScript : MonoBehaviour {
 		maxTime = PlayerSettings.Instance.Timer;
 		timer = 0.0f;
 		StateManager.Instance.ResetTimer ();
-		StateManager.Instance.CurrentState = StateManager.State.PLAYING;
+        scaledResolutionWidth = nativeVerticalResolution / Screen.height * Screen.width;
 	}
 
 	void Update()
@@ -33,8 +32,6 @@ public class GUIScript : MonoBehaviour {
 			return;
 		}
 
-        if (guiText != null)
-		    guiText.text = message;
         if (StateManager.Instance.Paused)
         {
             Time.timeScale = 0;
@@ -109,6 +106,8 @@ public class GUIScript : MonoBehaviour {
 			}
 		}
 
+        GUI.Box(new Rect(scaledResolutionWidth / 2 - 480,  nativeVerticalResolution - 150, 960, 125), message, "Message");
+
         if (StateManager.Instance.Paused)
         {
             GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.5f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
@@ -122,12 +121,6 @@ public class GUIScript : MonoBehaviour {
                                 nativeVerticalResolution / 10), string.Format("{0:00}:{1:00}", minutes, seconds));
         }
 		ShowGestures ();
-        if (GUI.Button(new Rect (scaledResolutionWidth - (scaledResolutionWidth / 10) - 20, 20, scaledResolutionWidth / 10, nativeVerticalResolution / 20), 
-                                    "TOGGLE PAUSE"))
-		{
-            StateManager.Instance.TogglePause();
-			//goto main menu
-		}
 	}
 
 	private void ShowGestures()

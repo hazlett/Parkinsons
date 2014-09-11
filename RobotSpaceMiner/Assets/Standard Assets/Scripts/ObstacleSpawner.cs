@@ -111,33 +111,33 @@ public class ObstacleSpawner : MonoBehaviour {
 
     void StartSpawnRate()
     {
-        spawnDistance = 150;
+        spawnDistance = 100;
         if(PlayerSettings.Instance.Age >= 60 && PlayerSettings.Instance.Age < 70) {
-            baseRate = spawnRate = 350;
+            baseRate = spawnRate = 100;
         }
         else if (PlayerSettings.Instance.Age >= 70 && PlayerSettings.Instance.Age < 75)
         {
-            baseRate = spawnRate = 400;
+            baseRate = spawnRate = 125;
         }
         else if (PlayerSettings.Instance.Age >= 75 && PlayerSettings.Instance.Age < 80)
         {
-            baseRate = spawnRate = 450;
+            baseRate = spawnRate = 150;
         }
         else if (PlayerSettings.Instance.Age >= 80 && PlayerSettings.Instance.Age < 85)
         {
-            baseRate = spawnRate = 500;
+            baseRate = spawnRate = 175;
         }
         else if (PlayerSettings.Instance.Age >= 85 && PlayerSettings.Instance.Age < 90)
         {
-            baseRate = spawnRate = 550;
+            baseRate = spawnRate = 200;
         }
         else if (PlayerSettings.Instance.Age >= 90)
         {
-            baseRate = spawnRate = 600;
+            baseRate = spawnRate = 225;
         }
         else
         {
-            baseRate = spawnRate = 350;
+            baseRate = spawnRate = 100;
         }
         
     }

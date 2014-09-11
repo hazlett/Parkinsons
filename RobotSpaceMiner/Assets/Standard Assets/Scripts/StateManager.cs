@@ -37,8 +37,8 @@ public class StateManager {
     private StateManager()
     {
         paused = false;
-        currentState = State.PLAYING;
-		playing = true;
+        currentState = State.PREGAME;
+		playing = false;
     }
     public static StateManager Instance
     {
@@ -54,9 +54,13 @@ public class StateManager {
         {
             message = "";
         }
-        if (AutoRun)
+        else if (AutoRun)
         {
             message = "AUTO RUN ENABLED";
+        }
+        else if (currentState == State.PREGAME)
+        {
+            message = "Please stand and raise your right hand to begin";
         }
         else if (FireHazards)
         {

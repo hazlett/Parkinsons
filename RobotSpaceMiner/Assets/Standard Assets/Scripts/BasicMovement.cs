@@ -65,15 +65,18 @@ public class BasicMovement : MonoBehaviour {
 
     public void Move() {
 
-        if (cartDistance.Distance() <= 400 || this.transform.rotation.x < -0.550001f)
+        if (StateManager.Instance.IsPlaying)
         {
-			if (StateManager.Instance.TimerPause)
-			{
-				StateManager.Instance.StartTimer();
-			}
-            if (rigidbody.velocity.x <= maxVelocity)
+            if (cartDistance.Distance() <= 400 || this.transform.rotation.x < -0.550001f)
             {
-                rigidbody.AddForce(new Vector3(forceOnCart, 0, 0));
+                if (StateManager.Instance.TimerPause)
+                {
+                    StateManager.Instance.StartTimer();
+                }
+                if (rigidbody.velocity.x <= maxVelocity)
+                {
+                    rigidbody.AddForce(new Vector3(forceOnCart, 0, 0));
+                }
             }
         }
 
