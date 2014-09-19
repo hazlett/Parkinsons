@@ -75,17 +75,10 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="GestureLibrary">
-<<<<<<< HEAD
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/GestureLibrary.dll</HintPath>
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/GestureLibrary.dll</HintPath>
  </Reference>
  <Reference Include="KinectV2">
- <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Standard Assets/Scripts/KinectV2.dll</HintPath>
-=======
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/GestureLibrary.dll</HintPath>
- </Reference>
- <Reference Include="KinectV2">
- <HintPath>C:/Users/hazle_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/KinectV2.dll</HintPath>
->>>>>>> origin/master
+ <HintPath>C:/Users/bbric_000/Documents/GitHub/Parkinsons/RobotSpaceMiner/Assets/Resources/KinectV2.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

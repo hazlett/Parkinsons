@@ -127,6 +127,7 @@ public class InteractionManager : MonoBehaviour
 	{
 		if(isLeftHandClick)
 		{
+            MouseControl.MouseClick();
 			isLeftHandClick = false;
 			leftHandClickProgress = 0f;
 			lastLeftHandPos = Vector3.zero;
@@ -173,6 +174,8 @@ public class InteractionManager : MonoBehaviour
 	{
 		if(isRightHandClick)
 		{
+
+            MouseControl.MouseClick();
 			isRightHandClick = false;
 			rightHandClickProgress = 0f;
 			lastRightHandPos = Vector3.zero;
@@ -396,7 +399,7 @@ public class InteractionManager : MonoBehaviour
 					if(!dragInProgress && (handEvent == HandEventType.Grip))
 					{
 						dragInProgress = true;
-						MouseControl.MouseDrag();
+                        MouseControl.MouseClick();
 					}
 					else if(dragInProgress && (handEvent == HandEventType.Release))
 					{
