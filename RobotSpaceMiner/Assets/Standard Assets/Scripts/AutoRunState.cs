@@ -35,7 +35,8 @@ public class AutoRunState : MonoBehaviour {
 	{
 		foreach (CubeGridCollider cube in cubes)
 		{
-            cube.Deactivate();
+            if (cube.onCount > 0)
+                cube.Deactivate();
 		}
 	}
 

@@ -105,18 +105,23 @@ public class GestureManagerScript : MonoBehaviour {
        }
        if (sectionName == "tutorial")
        {
-           if (name == "standTutorial")
-           {
-               rv = new StandTutorial(tutor);
-           }
-           if (name == "sitTutorial")
-           {
-               rv = new SitTutorial(tutor);
-           }
+            if (name == "standTutorial")
+            {
+                rv = new StandTutorial(tutor);
+            }
+            if (name == "sitTutorial")
+            {
+                rv = new SitTutorial(tutor);
+            }
 			if (name == "continueTutorial")
 			{
 				rv = new ContinueTutorial(tutor);
 			}
+            if (name == "")
+            {
+                rv = new SittingRunTutorial(tutor);
+            }
+
        }
        
         return rv;

@@ -6,7 +6,7 @@ public class CubeGridCollider : MonoBehaviour {
     public GameObject fireText;
 
     private Color transparent = new Color(1, 1, 1, 0);
-
+    internal int onCount;
 	// Use this for initialization
 	void Start () {
 
@@ -38,14 +38,18 @@ public class CubeGridCollider : MonoBehaviour {
     // Turn cube indicator on
     internal void Activate()
     {
+        onCount++;
         fireText.renderer.enabled = true;
     }
 
     // And shoot an iceball out of the cube
     internal void Deactivate()
     {
-        fireText.renderer.enabled = false;
-
+        onCount--;
+        if (onCount == 0)
+        {
+            fireText.renderer.enabled = false;
+        }
         GameObject iceball;
         iceball = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Iceball"));
         iceball.transform.position = this.transform.position;
@@ -54,5 +58,6 @@ public class CubeGridCollider : MonoBehaviour {
     internal void DeactivateHit()
     {
         fireText.renderer.enabled = false;
+        onCount = 0;
     }
 }
