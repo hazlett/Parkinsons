@@ -91,7 +91,7 @@ public class GUIScript : MonoBehaviour {
 			if (StateManager.Instance.CurrentState == StateManager.State.GAMEOVER)
 			{
 				GUILayout.Box ("STATS");
-				GUILayout.Box ("DISTANCE TRAVELED: " + stats.Distance);
+				GUI.Box (new Rect(scaledResolutionWidth - 325, 25, 400, 100),"DISTANCE TRAVELED: " + stats.Distance);
 				GUILayout.Box ("SCORE: " + stats.Score);
 				GUI.Box(new Rect (scaledResolutionWidth * 0.5f - (scaledResolutionWidth / 10), nativeVerticalResolution * 0.3f - (nativeVerticalResolution / 20), scaledResolutionWidth / 5,  nativeVerticalResolution / 10), 
 				        "GAME\nOVER");
@@ -132,8 +132,8 @@ public class GUIScript : MonoBehaviour {
 		color.a = 1.0f;
 		GUI.color = color;
         GUI.DrawTexture(new Rect(scaledResolutionWidth - logo.width - 15f, nativeVerticalResolution - logo.height - 15f, logo.width, logo.height), logo);
-		GUILayout.Box("Score: " + stats.Score);
-		GUILayout.Box("Distance: " + cart.Distance() + " meters");
+        GUI.Box(new Rect(scaledResolutionWidth - 525, 0, 500, 75), "Score: " + stats.Score);
+        GUI.Box(new Rect(scaledResolutionWidth - 525, 75, 500, 75), "DISTANCE TRAVELED: " + stats.Distance);
         GUILayout.Box("Velocity: " + Mathf.Floor(movement.Velocity()) + " m/s");
 	}
 
