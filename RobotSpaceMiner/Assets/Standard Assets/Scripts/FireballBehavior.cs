@@ -14,14 +14,13 @@ public class FireballBehavior : MonoBehaviour {
 
         cart = GameObject.Find("Cart");
 
-
         setCube();
         spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
 	}
 
-    void OnCollisionEnter(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collider.transform.tag == "CubeGrid")
+        if (collider.tag == "CubeGrid")
         {
             DeactivateCube();
             spawner.IncreaseMissCount();
@@ -29,7 +28,7 @@ public class FireballBehavior : MonoBehaviour {
             explosion.transform.position = this.transform.position;
 
             // Force of the explosion
-            cart.rigidbody.AddForce(new Vector3(-25000, 0, 0));
+            cart.rigidbody.AddForce(-25000, 0, 0);
             cart.GetComponent<GameStats>().AddScore(-100);
 
             GameObject.Destroy(this.gameObject);
@@ -46,7 +45,7 @@ public class FireballBehavior : MonoBehaviour {
         }
 
         // If the cart is past the fireball, but off to the side, destroy the object
-        if (this.transform.position.x < cart.transform.position.x)
+        if (this.transform.position.x < cart.transform.position.x - 15)
         {
             GameObject.Destroy(this.gameObject);
         }
