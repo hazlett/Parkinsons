@@ -102,6 +102,10 @@ public class GestureManagerScript : MonoBehaviour {
            {
                rv = new MoveTrackRight(move);
            }
+           if (name == "raiseHands")
+           {
+               rv = new HandRaise();
+           }
        }
        if (sectionName == "tutorial")
        {

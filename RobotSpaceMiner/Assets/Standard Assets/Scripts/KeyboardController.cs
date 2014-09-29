@@ -39,6 +39,7 @@ public class KeyboardController : MonoBehaviour {
 		keyMapping.Add (KeyCode.UpArrow, new MoveTrackRight (cart));
 		keyMapping.Add (KeyCode.R, new AutoRun (cart));
         keyMapping.Add(KeyCode.F4, new QuitApplication());
+        keyMapping.Add(KeyCode.Q, new HandRaise());
 	}
 
 	void Update () {

@@ -97,6 +97,7 @@
     <Compile Include="Assets\Standard Assets\Scripts\GUIScript.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\GameStats.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\GestureManagerScript.cs" />
+    <Compile Include="Assets\Standard Assets\Scripts\HandRaise.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\HandbarRotation.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\IceballMovement.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\IgnoreRobot.cs" />

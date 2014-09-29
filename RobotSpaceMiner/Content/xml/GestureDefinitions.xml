@@ -42,7 +42,6 @@
     </state>
   </gesture>
 
-  
   <gesture name="raise-hand">
     <state name="initial" order="0">
       <criterion ref="shoulder-hand-vector"
@@ -53,6 +52,51 @@
     <state name="final" order="1">
       <criterion ref="shoulder-hand-vector"
       component="y" compare="gt" value="0.0"/>
+    </state>
+  </gesture>
+     
+  <gesture name="raise-primary-hand">
+    <state name="initial" order="0">
+      <criterion ref="shoulder-hand-vector"
+      component="y" compare="lt" value="-0.1"/>
+      <criterion ref="hip-center-hand-vector"
+      component="x" compare="gt" value="0.0"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="shoulder-hand-vector"
+      component="y" compare="gt" value="0.25"/>
+    </state>
+  </gesture>
+  
+   <gesture name="raise-secondary-hand">
+    <state name="initial" order="0">
+      <criterion ref="secondary-shoulder-hand-vector"
+      component="y" compare="lt" value="-0.1"/>
+      <criterion ref="secondary-hip-center-hand-vector"
+      component="x" compare="gt" value="0.0"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="secondary-shoulder-hand-vector"
+      component="y" compare="gt" value="0.25"/>
+    </state>
+  </gesture>
+  
+  <gesture name="raise-both-hands">
+    <state name="initial" order="0">
+      <criterion ref="secondary-shoulder-hand-vector"
+      component="y" compare="lt" value="-0.1"/>
+      <criterion ref="secondary-hip-center-hand-vector"
+      component="x" compare="gt" value="0.0"/>
+     <criterion ref="shoulder-hand-vector"
+      component="y" compare="lt" value="-0.1"/>
+      <criterion ref="hip-center-hand-vector"
+      component="x" compare="gt" value="0.0"/>
+    </state>
+    <state name="final" order="1">
+      <criterion ref="secondary-shoulder-hand-vector"
+      component="y" compare="gt" value="0.25"/>
+     <criterion ref="shoulder-hand-vector"
+      component="y" compare="gt" value="0.25"/>
     </state>
   </gesture>
 

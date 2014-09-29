@@ -84,6 +84,13 @@
     order="1"/>
   </vector>
 
+  <vector name="secondary-shoulder-hand-vector">
+    <joint skeletal-joint="shoulder"
+    side="primary" order="0"/>
+    <joint skeletal-joint="wrist" side="secondary"
+    order="1"/>
+  </vector>
+
   <vector name="shoulder-center-hand-vector">
     <joint skeletal-joint="shoulder-center" side="primary"
     order="0"/>
