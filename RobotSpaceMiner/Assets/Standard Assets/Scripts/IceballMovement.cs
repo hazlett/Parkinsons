@@ -5,12 +5,23 @@ public class IceballMovement : MonoBehaviour {
 
     private ParticleSystem niceShot, increase;
     private ObstacleSpawner spawner;
+    private float timer;
+
 	void Start () {
         this.rigidbody.velocity = new Vector3(60, 0, 0);
         spawner = GameObject.Find("Obstacle Spawner").GetComponent<ObstacleSpawner>();
         niceShot = GameObject.Find("Nice_Shot_Popup").GetComponent<ParticleSystem>();
         increase = GameObject.Find("Increase_Score").GetComponent<ParticleSystem>();
 	}
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 5.0f)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+    }
 
     void OnTriggerEnter(Collider collider)
     {
